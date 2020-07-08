@@ -1,0 +1,55 @@
+﻿@model IEnumerable<V1_BTL_CNPM.Models.khoa>
+
+@using (Html.BeginForm("Search", "khoas", FormMethod.Get))
+
+{
+
+    <p>
+
+        Nhập thông tin: @Html.TextBox("SearchString")  <input type="submit" value="Tìm kiếm" />
+
+    </p>
+
+    /* <div id="dataTable_filter" class="dataTables_filter">bai-tap-bai-3-dien-tich-tam-giac
+         <label>
+             Search: @Html.TextBox("SearchString")
+             <input type="submit" class="form-control form-control-sm" placeholder="......." aria-controls="dataTable" value="Tìm kiếm">
+         </label>
+     </div>*/
+
+}
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+@RenderPage("../Shared/toptable.cshtml")
+
+<tr>
+    <th rowspan="1" colspan="1">Mã khoa</th>
+
+    <th rowspan="1" colspan="1">Tên khoa</th>
+
+    <th rowspan="1" colspan="1">Chức năng</th>
+</tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaKhoa)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.TenKhoa)
+
+
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.MaKhoa }) |
+            @Html.ActionLink("Details", "Details", new { id = item.MaKhoa }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MaKhoa })
+        </td>
+    </tr>
+}
+
+@RenderPage("../Shared/bottomtable.cshtml")
+

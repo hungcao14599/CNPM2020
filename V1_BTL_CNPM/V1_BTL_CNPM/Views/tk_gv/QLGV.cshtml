@@ -1,0 +1,102 @@
+﻿
+@model IEnumerable<V1_BTL_CNPM.Models.tk_gv>
+@{
+    ViewBag.Title = "Qlds";
+}
+
+<!--
+<h2>ShowData</h2>
+<div>
+    <a href="/AddData/AddDataView">Nhap thong tin</a>
+    <a href="/CMS/login">Dang xuat</a>
+    <a href="../Link/Index">Tro lai</a>
+</div>
+<div>
+
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Ma tai khoan</th>
+                <th scope="col">Tai Khoan</th>
+                <th scope="col">Mat Khau</th>
+                <th scope="col">Email</th>
+                <th scope="col">Ma giang vien</th>
+                <th scope="col">Ten giang vien</th>
+                <th scope="col">Dia chi</th>
+
+            </tr>
+        </thead>
+        <tbody>
+           @* @foreach (var item in Model)
+            {
+            <tr>
+                <th scope="row">@item.MaTK</th>
+                <td>@item.TenTaiKhoan</td>
+                <td>@item.MatKhau</td>
+                <td>@item.email</td>
+                <td>@item.MaGV</td>
+                <td>@item.HoTenGV</td>
+                <td>@item.DiaChi</td>
+
+            </tr>
+
+            }*@
+
+
+        </tbody>
+
+
+    </table>
+</div>
+    -->
+
+
+@RenderPage("../Shared/toptable.cshtml")
+
+<thead>
+    <tr role="row">
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 58px;">Ma tai khoan</th>
+        <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column descending" aria-sort="ascending" style="width: 62px;">Tai khoan</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 50px;">Mat Khau</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 68px;">Ma giang vien</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Ten giang vien</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Dia chi</th>
+
+    </tr>
+</thead>
+<!--<tfoot>
+    <tr>
+        <th rowspan="1" colspan="1">Ma tai khoan</th>
+        <th rowspan="1" colspan="1">Tai Khoan</th>
+        <th rowspan="1" colspan="1">Mat Khau</th>
+        <th rowspan="1" colspan="1">Email</th>
+        <th rowspan="1" colspan="1">Ma giang vien</th>
+        <th rowspan="1" colspan="1" >Ten giang vien</th>
+        <th rowspan="1" colspan="1">Dia chi</th>
+
+    </tr>
+</tfoot>-->
+
+<tbody>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th scope="row">@item.MaTK</th>
+            <td>@item.TenTaiKhoan</td>
+            <td>@item.MatKhau</td>
+            
+            <td>@item.MaGV</td>
+            <td>@item.HoTenGV</td>
+            <td>@item.DiaChi</td>
+
+        </tr>
+
+
+
+    }
+
+
+</tbody>
+@RenderPage("../Shared/bottomtable.cshtml")

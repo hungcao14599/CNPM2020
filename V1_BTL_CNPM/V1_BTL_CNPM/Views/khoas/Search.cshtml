@@ -1,0 +1,96 @@
+﻿
+@model IEnumerable<V1_BTL_CNPM.Models.khoa>
+
+
+<p>
+
+
+    <!-- 1. Đoạn cần thêm -->
+
+    @using (Html.BeginForm("Search", "khoas", FormMethod.Get))
+
+    {
+
+    <p>
+
+        Nhập thông tin: @Html.TextBox("SearchString")  <input type="submit" value="Tìm kiếm" />
+
+    </p>
+    /*
+    <div id="dataTable_filter" class="dataTables_filter">
+        <label>
+            Search: @Html.TextBox("SearchString")
+            <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable" value="Tìm kiếm">
+        </label>
+    </div>
+    */
+}
+
+    <!-- Kết thúc -->
+    </p>
+
+    <table class="table">
+
+        <tr>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.MaKhoa)
+
+            </th>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.TenKhoa)
+
+            </th>
+
+
+
+
+            <th></th>
+
+        </tr>
+
+
+        @foreach (var item in Model)
+
+        {
+
+            <tr>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.MaKhoa)
+
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.TenKhoa)
+
+                </td>
+
+
+
+
+
+                <td>
+
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MaKhoa }) |
+
+                    @Html.ActionLink("Details", "Details", new { id = item.MaKhoa }) |
+
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MaKhoa }) |
+
+                </td>
+
+
+            </tr>
+
+        }
+
+    </table>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>

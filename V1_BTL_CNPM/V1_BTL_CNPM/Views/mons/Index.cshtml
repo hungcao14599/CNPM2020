@@ -1,0 +1,39 @@
+﻿@model IEnumerable<V1_BTL_CNPM.Models.mon>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenMon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nganh.TenNganh)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenMon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nganh.TenNganh)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaMon }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaMon }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaMon })
+        </td>
+    </tr>
+}
+
+</table>

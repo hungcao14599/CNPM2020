@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_cnpm_v1ModelStoreContainer" CdmEntityContainer="db_cnpm_v1Entities">
+    <EntitySetMapping Name="Diems">
+      <EntityTypeMapping TypeName="db_cnpm_v1Model.Diem">
+        <MappingFragment StoreEntitySet="Diem">
+          <ScalarProperty Name="MaSV" ColumnName="MaSV" />
+          <ScalarProperty Name="Diem1" ColumnName="Diem" />
+          <ScalarProperty Name="MaMon" ColumnName="MaMon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="giangviens">
+      <EntityTypeMapping TypeName="db_cnpm_v1Model.giangvien">
+        <MappingFragment StoreEntitySet="giangvien">
+          <ScalarProperty Name="MaGV" ColumnName="MaGV" />
+          <ScalarProperty Name="HoTenGV" ColumnName="HoTenGV" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="MaTK" ColumnName="MaTK" />
+          <ScalarProperty Name="MaNganh" ColumnName="MaNganh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kehoachgiangdays">
+      <EntityTypeMapping TypeName="db_cnpm_v1Model.kehoachgiangday">
+        <MappingFragment StoreEntitySet="kehoachgiangday">
+          <ScalarProperty Name="MaKHGD" ColumnName="MaKHGD" />
+          <ScalarProperty Name="BaiHocDK" ColumnName="BaiHocDK" />
+          <ScalarProperty Name="DiaDiemDK" ColumnName="DiaDiemDK" />
+          <ScalarProperty Name="ThoiGianDK" ColumnName="ThoiGianDK" />
+          <ScalarProperty Name="MaGV" ColumnName="MaGV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="khoas">
+      <EntityTypeMapping TypeName="db_cnpm_v1Model.khoa">
+        <MappingFragment StoreEntitySet="khoa">
+          <ScalarProperty Name="TenKhoa" ColumnName="TenKhoa" />
+          <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lichtrinhthuctes">
+      <EntityTypeMapping TypeName="db_cnpm_v1Model.lichtrinhthucte">
+        <MappingFragment StoreEntitySet="lichtrinhthucte">
+          <ScalarProperty Name="MaLTTT" ColumnName="MaLTTT" />
+          <ScalarProperty Name="BaiHocTT" ColumnName="BaiHocTT" />
+          <ScalarProperty Name="DiaDiemTT" ColumnName="DiaDiemTT" />
+          <ScalarProperty Name="ThoiGianTT" ColumnName="ThoiGianTT" />
+          <ScalarProperty Name="MaGV" ColumnName="MaGV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lophocphans">
+      <EntityTypeMapping TypeName="db_cnpm_v1Model.lophocphan">
+        <MappingFragment StoreEntitySet="lophocphan">
+          <ScalarProperty Name="MaLHP" ColumnName="MaLHP" />
+          <ScalarProperty Name="TenLopHP" ColumnName="TenLopHP" />
+          <ScalarProperty Name="MaTGH" ColumnName="MaTGH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lopmonhocs">
+      <EntityTypeMapping TypeName="db_cnpm_v1Model.lopmonhoc">
+        <MappingFragment StoreEntitySet="lopmonhoc">
+          <ScalarProperty Name="MaLTM" ColumnName="MaLTM" />
+          <ScalarProperty Name="TenLopMon" ColumnName="TenLopMon" />
+          <ScalarProperty Name="MaMon" ColumnName="MaMon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mons">
+      <EntityTypeMapping TypeName="db_cnpm_v1Model.mon">
+        <MappingFragment StoreEntitySet="mon">
+          <ScalarProperty Name="TenMon" ColumnName="TenMon" />
+          <ScalarProperty Name="MaMon" ColumnName="MaMon" />
+          <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nganhs">
+      <EntityTypeMapping TypeName="db_cnpm_v1Model.nganh">
+        <MappingFragment StoreEntitySet="nganh">
+          <ScalarProperty Name="MaNganh" ColumnName="MaNganh" />
+          <ScalarProperty Name="TenNganh" ColumnName="TenNganh" />
+          <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sinhviens">
+      <EntityTypeMapping TypeName="db_cnpm_v1Model.sinhvien">
+        <MappingFragment StoreEntitySet="sinhvien">
+          <ScalarProperty Name="MaTK" ColumnName="MaTK" />
+          <ScalarProperty Name="MaSV" ColumnName="MaSV" />
+          <ScalarProperty Name="TenSV" ColumnName="TenSV" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="MaNganh" ColumnName="MaNganh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="taikhoans">
+      <EntityTypeMapping TypeName="db_cnpm_v1Model.taikhoan">
+        <MappingFragment StoreEntitySet="taikhoan">
+          <ScalarProperty Name="TenTaiKhoan" ColumnName="TenTaiKhoan" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="Quyen" ColumnName="Quyen" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="MaTK" ColumnName="MaTK" />
+          <ScalarProperty Name="CheckBox" ColumnName="CheckBox" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="thoigianhocs">
+      <EntityTypeMapping TypeName="db_cnpm_v1Model.thoigianhoc">
+        <MappingFragment StoreEntitySet="thoigianhoc">
+          <ScalarProperty Name="NamHoc" ColumnName="NamHoc" />
+          <ScalarProperty Name="HocKy" ColumnName="HocKy" />
+          <ScalarProperty Name="GiaiDoan" ColumnName="GiaiDoan" />
+          <ScalarProperty Name="MaTGH" ColumnName="MaTGH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ctlophp" TypeName="db_cnpm_v1Model.ctlophp" StoreEntitySet="ctlophp">
+      <EndProperty Name="lophocphan">
+        <ScalarProperty Name="MaLHP" ColumnName="MaLHP" />
+      </EndProperty>
+      <EndProperty Name="lopmonhoc">
+        <ScalarProperty Name="MaLTM" ColumnName="MaLTM" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="gv_mon" TypeName="db_cnpm_v1Model.gv_mon" StoreEntitySet="gv_mon">
+      <EndProperty Name="giangvien">
+        <ScalarProperty Name="MaGV" ColumnName="MaGV" />
+      </EndProperty>
+      <EndProperty Name="mon">
+        <ScalarProperty Name="MaMon" ColumnName="MaMon" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
