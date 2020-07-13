@@ -6,13 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using V1_BTL_CNPM.Controllers.admin;
 using V1_BTL_CNPM.Models;
 
 namespace V1_BTL_CNPM.Controllers
 {
-    public class nganhsController : Controller
+    public class nganhsController : BaseController
     {
-        private db_cnpm_v1Entities db = new db_cnpm_v1Entities();
+        private db_cnpm_v1Entities1 db = new db_cnpm_v1Entities1();
 
         // GET: nganhs
         public ActionResult Index()

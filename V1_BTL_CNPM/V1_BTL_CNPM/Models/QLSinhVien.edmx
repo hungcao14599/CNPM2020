@@ -124,7 +124,6 @@
           <Property Name="Quyen" Type="int" />
           <Property Name="NgayTao" Type="date" />
           <Property Name="MaTK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CheckBox" Type="bit" />
         </EntityType>
         <EntityType Name="thoigianhoc">
           <Key>
@@ -540,7 +539,6 @@
           <Property Name="Quyen" Type="Int32" />
           <Property Name="NgayTao" Type="DateTime" Precision="0" />
           <Property Name="MaTK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CheckBox" Type="Boolean" />
           <NavigationProperty Name="giangviens" Relationship="Self.FK__giangvien__MaTK__30F848ED" FromRole="taikhoan" ToRole="giangvien" />
           <NavigationProperty Name="sinhviens" Relationship="Self.FK__sinhvien__MaTK__46E78A0C" FromRole="taikhoan" ToRole="sinhvien" />
         </EntityType>
@@ -706,7 +704,7 @@
           <End Role="giangvien" Type="Self.giangvien" Multiplicity="*" />
           <End Role="mon" Type="Self.mon" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="db_cnpm_v1Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="db_cnpm_v1Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Diems" EntityType="Self.Diem" />
           <EntitySet Name="giangviens" EntityType="Self.giangvien" />
           <EntitySet Name="kehoachgiangdays" EntityType="Self.kehoachgiangday" />
@@ -781,7 +779,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="db_cnpm_v1ModelStoreContainer" CdmEntityContainer="db_cnpm_v1Entities">
+        <EntityContainerMapping StorageEntityContainer="db_cnpm_v1ModelStoreContainer" CdmEntityContainer="db_cnpm_v1Entities1">
           <EntitySetMapping Name="Diems">
             <EntityTypeMapping TypeName="db_cnpm_v1Model.Diem">
               <MappingFragment StoreEntitySet="Diem">
@@ -894,7 +892,6 @@
                 <ScalarProperty Name="Quyen" ColumnName="Quyen" />
                 <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
                 <ScalarProperty Name="MaTK" ColumnName="MaTK" />
-                <ScalarProperty Name="CheckBox" ColumnName="CheckBox" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -80,4 +80,3 @@ E:\CNPM_2020\V1_BTL_CNPM\V1_BTL_CNPM\obj\Debug\V1_BTL_CNPM.csproj.CoreCompileInp
 E:\CNPM_2020\V1_BTL_CNPM\V1_BTL_CNPM\obj\Debug\V1_BTL_CNPM.csproj.CopyComplete
 E:\CNPM_2020\V1_BTL_CNPM\V1_BTL_CNPM\obj\Debug\V1_BTL_CNPM.dll
 E:\CNPM_2020\V1_BTL_CNPM\V1_BTL_CNPM\obj\Debug\V1_BTL_CNPM.pdb
-E:\CNPM_2020\V1_BTL_CNPM\V1_BTL_CNPM\obj\Debug\V1_BTL_CNPM.csprojAssemblyReference.cache

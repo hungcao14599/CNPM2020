@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
+using V1_BTL_CNPM.Common;
 using V1_BTL_CNPM.Models;
 
 namespace V1_BTL_CNPM.Controllers
@@ -11,7 +9,7 @@ namespace V1_BTL_CNPM.Controllers
     public class LoginController : Controller
     {
 
-        private db_cnpm_v1Entities db = new db_cnpm_v1Entities();
+        private db_cnpm_v1Entities1 db = new db_cnpm_v1Entities1();
 
         // GET: Login
         public ActionResult Index()
@@ -24,15 +22,17 @@ namespace V1_BTL_CNPM.Controllers
             return View();
         }
 
-        public bool CheckBox { set; get; }
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(taikhoan accounts)
+        public ActionResult Login(taikhoan model)
         {
-            var ketqua = from s in db.taikhoans
+            /*var ketqua = from s in db.taikhoans
                          where s.TenTaiKhoan == accounts.TenTaiKhoan
                          && s.MatKhau == accounts.MatKhau
                          select s;
+
+            var userSession = new taikhoan();
 
 
             if (ketqua.Any())
@@ -51,34 +51,111 @@ namespace V1_BTL_CNPM.Controllers
                 if (quyen.Any())
                 {
                     FormsAuthentication.SetAuthCookie(accounts.TenTaiKhoan, CheckBox);
+                    
                     return RedirectToAction("Khoa", "khoas");
                 }
                 else if (quyen1.Any())
                 {
-                    FormsAuthentication.SetAuthCookie(accounts.TenTaiKhoan, CheckBox);
+                    /*FormsAuthentication.SetAuthCookie(accounts.TenTaiKhoan, CheckBox);*/
+            //return Content("Bạn không phải admin, bạn không đủ quyền");*/
+            /*  Response.Write("<script>alert('Bạn không phải admin, bạn không đủ quyền truy cập')</script>");
+          }
+          else
+          {
+              /*FormsAuthentication.SetAuthCookie(accounts.TenTaiKhoan, CheckBox);*/
+            //return Content("Bạn không phải admin, bạn không đủ quyền");*/
+            /*  Response.Write("<script>alert('Bạn không phải admin, bạn không đủ quyền truy cập')</script>");
+          }
+      }
+      else
+      {
+          Response.Write("<script>alert('Tài khoản hoặc mật khẩu không đúng')</script>");
+
+      }
+      return View(accounts);*/
+
+            if (ModelState.IsValid)
+            {
+
+                var result = CheckLogin(model.TenTaiKhoan, model.MatKhau);
+                if (result == 1)
+                {
+                    var user = GetById(model.TenTaiKhoan);
+                    var userSession = new UserLogin();
+                    userSession.UserName = user.TenTaiKhoan;
+                    userSession.UserID = user.MaTK;
+
+                    //userSession.GroupID = user.GroupID;
+                    //var listCredentials = dao.GetListCredential(model.UserName);
+
+                    //Session.Add(CommonConstants.SESSION_CREDENTIALS, listCredentials);
+                    Session.Add(CommonConstants.USER_SESSION, userSession);
                     return RedirectToAction("Index", "nganhs");
+                }
+                else if (result == 0)
+                {
+                    ModelState.AddModelError("", "Tài khoản không tồn tại.");
+                    //Response.Write("<script>alert('Bạn không phải admin, bạn không đủ quyền truy cập11111')</script>");
+                }
+                else if (result == -1)
+                {
+                    ModelState.AddModelError("", "Tài khoản đang bị khoá.");
+                }
+                else if (result == -2)
+                {
+                    ModelState.AddModelError("", "Mật khẩu không đúng.");
+                }
+                else if (result == -3)
+                {
+                    ModelState.AddModelError("", "Tài khoản của bạn không có quyền đăng nhập.");
+
                 }
                 else
                 {
-                    FormsAuthentication.SetAuthCookie(accounts.TenTaiKhoan, CheckBox);
-                    return RedirectToAction("Index", "mons");
+                    ModelState.AddModelError("", "Đăng nhập không đúng.");
                 }
             }
             else
             {
-                ModelState.AddModelError("", "Tài khoản hoặc mật khẩu không đúng");
-
+                ModelState.AddModelError("", "Đăng nhập không đúng.");
             }
-            return View(accounts);
+            return View("Index");
 
         }
 
         [Authorize]
-        public ActionResult logout()
+        public ActionResult Logout()
         {
-            FormsAuthentication.SignOut();
-            return RedirectToAction("", "");
+            Session[CommonConstants.USER_SESSION] = null;
+            return RedirectToAction("Index", "nganhs");
         }
+
+
+
+        public taikhoan GetById(string userName)
+        {
+            return db.taikhoans.SingleOrDefault(x => x.TenTaiKhoan == userName);
+        }
+        public int CheckLogin(string userName, string passWord)
+        {
+            var result = db.taikhoans.SingleOrDefault(x => x.TenTaiKhoan == userName);
+            if (result == null)
+            {
+                return 0;
+            }
+            else
+            {
+                if (result.MatKhau == passWord)
+                    return 1;
+                else
+                    return -2;
+
+
+            }
+        }
+
+        
+
 
 
     }

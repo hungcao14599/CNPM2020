@@ -128,8 +128,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\CommonConstants.cs" />
+    <Compile Include="Common\UserLogin.cs" />
+    <Compile Include="Controllers\admin\BaseController.cs" />
     <Compile Include="Controllers\admin\monsController.cs" />
-    <Compile Include="Controllers\admin\tk_gvController.cs" />
+    <Compile Include="Controllers\admin\qlgvController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\admin\khoasController.cs" />
@@ -165,6 +168,7 @@
     <Compile Include="Models\nganh.cs">
       <DependentUpon>QLSinhVien.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\qlgv.cs" />
     <Compile Include="Models\QLSinhVien.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -189,13 +193,21 @@
     <Compile Include="Models\thoigianhoc.cs">
       <DependentUpon>QLSinhVien.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tk_gv.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="asset\bootstrap\css\bootstrap.min.css" />
     <Content Include="asset\bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="asset\bootstrap\js\bootstrap.min.js" />
+    <Content Include="asset\client\css\login1.css" />
+    <Content Include="asset\client\images\Children%27s Section.jpg" />
+    <Content Include="asset\client\images\login.jpg" />
+    <Content Include="asset\client\images\logo.png" />
+    <Content Include="asset\client\images\logo.svg" />
+    <Content Include="asset\client\images\mo-nhoe-2-lop.png" />
+    <Content Include="asset\client\images\mo.png" />
+    <Content Include="asset\client\images\nhoe-mo-2-lop.png" />
+    <Content Include="asset\client\images\nhoe.png" />
     <Content Include="asset\css\login.css" />
     <Content Include="asset\css\main.css" />
     <Content Include="asset\css\sb-admin-2.css" />
@@ -209,7 +221,7 @@
     <Content Include="asset\fonts\iconic\css\material-design-iconic-font.css" />
     <Content Include="asset\fonts\iconic\css\material-design-iconic-font.min.css" />
     <Content Include="asset\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
-    <Content Include="asset\img\Artboard 1.png" />
+    <Content Include="asset\img\Artboard1.png" />
     <Content Include="asset\img\bear.png" />
     <Content Include="asset\img\bear1.png" />
     <Content Include="asset\img\glasses.png" />
@@ -2092,13 +2104,6 @@
     <Content Include="asset\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="asset\vendor\jquery\jquery.min.map" />
     <Content Include="asset\vendor\jquery\jquery.slim.min.map" />
-    <EntityDeploy Include="Models\QLSinhVien.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLSinhVien.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\QLSinhVien.edmx.diagram">
-      <DependentUpon>QLSinhVien.edmx</DependentUpon>
-    </Content>
     <Content Include="asset\css\login.css.map" />
     <Content Include="asset\scss\login.scss" />
     <Content Include="asset\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
@@ -2160,6 +2165,15 @@
     <Content Include="asset\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="asset\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="asset\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="asset\client\css\login1.map" />
+    <Content Include="asset\client\scss\login.scss" />
+    <EntityDeploy Include="Models\QLSinhVien.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLSinhVien.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QLSinhVien.edmx.diagram">
+      <DependentUpon>QLSinhVien.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2208,13 +2222,17 @@
     <Content Include="Views\mons\Details.cshtml" />
     <Content Include="Views\mons\Edit.cshtml" />
     <Content Include="Views\mons\Index.cshtml" />
-    <Content Include="Views\tk_gv\QLGV.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Client\Main.cshtml" />
+    <Content Include="Views\Client\LoginUser.cshtml" />
+    <Content Include="Views\qlgv\qlgv.cshtml" />
+    <Content Include="Views\qlgv\create_qlgv.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="asset\admin\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -10,9 +10,9 @@ using V1_BTL_CNPM.Models;
 
 namespace V1_BTL_CNPM.Controllers.admin
 {
-    public class monsController : Controller
+    public class monsController : BaseController
     {
-        private db_cnpm_v1Entities db = new db_cnpm_v1Entities();
+        private db_cnpm_v1Entities1 db = new db_cnpm_v1Entities1();
 
         // GET: mons
         public ActionResult Index()
@@ -43,9 +43,7 @@ namespace V1_BTL_CNPM.Controllers.admin
             return View();
         }
 
-        // POST: mons/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaMon,TenMon,MaNganh")] mon mon)

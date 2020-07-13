@@ -119,7 +119,6 @@
     <Property Name="Quyen" Type="int" />
     <Property Name="NgayTao" Type="date" />
     <Property Name="MaTK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CheckBox" Type="bit" />
   </EntityType>
   <EntityType Name="thoigianhoc">
     <Key>

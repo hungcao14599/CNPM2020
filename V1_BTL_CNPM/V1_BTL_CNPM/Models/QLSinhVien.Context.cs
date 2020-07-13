@@ -13,10 +13,10 @@ namespace V1_BTL_CNPM.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class db_cnpm_v1Entities : DbContext
+    public partial class db_cnpm_v1Entities1 : DbContext
     {
-        public db_cnpm_v1Entities()
-            : base("name=db_cnpm_v1Entities")
+        public db_cnpm_v1Entities1()
+            : base("name=db_cnpm_v1Entities1")
         {
         }
     
@@ -37,6 +37,5 @@ namespace V1_BTL_CNPM.Models
         public virtual DbSet<sinhvien> sinhviens { get; set; }
         public virtual DbSet<taikhoan> taikhoans { get; set; }
         public virtual DbSet<thoigianhoc> thoigianhocs { get; set; }
-        
     }
 }

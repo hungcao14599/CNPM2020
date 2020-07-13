@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="db_cnpm_v1ModelStoreContainer" CdmEntityContainer="db_cnpm_v1Entities">
+  <EntityContainerMapping StorageEntityContainer="db_cnpm_v1ModelStoreContainer" CdmEntityContainer="db_cnpm_v1Entities1">
     <EntitySetMapping Name="Diems">
       <EntityTypeMapping TypeName="db_cnpm_v1Model.Diem">
         <MappingFragment StoreEntitySet="Diem">
@@ -113,7 +113,6 @@
           <ScalarProperty Name="Quyen" ColumnName="Quyen" />
           <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
           <ScalarProperty Name="MaTK" ColumnName="MaTK" />
-          <ScalarProperty Name="CheckBox" ColumnName="CheckBox" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -23,33 +23,35 @@
 </p>
 @RenderPage("../Shared/toptable.cshtml")
 
-<tr>
-    <th rowspan="1" colspan="1">Mã khoa</th>
 
-    <th rowspan="1" colspan="1">Tên khoa</th>
 
-    <th rowspan="1" colspan="1">Chức năng</th>
-</tr>
-
-@foreach (var item in Model)
-{
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaKhoa)
-        </td>
+        <th rowspan="1" colspan="1">Mã khoa</th>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.TenKhoa)
+        <th rowspan="1" colspan="1">Tên khoa</th>
 
-
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.MaKhoa }) |
-            @Html.ActionLink("Details", "Details", new { id = item.MaKhoa }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.MaKhoa })
-        </td>
+        <th rowspan="1" colspan="1">Chức năng</th>
     </tr>
-}
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaKhoa)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.TenKhoa)
+
+
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaKhoa }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaKhoa }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaKhoa })
+            </td>
+        </tr>
+    }
 
 @RenderPage("../Shared/bottomtable.cshtml")
 

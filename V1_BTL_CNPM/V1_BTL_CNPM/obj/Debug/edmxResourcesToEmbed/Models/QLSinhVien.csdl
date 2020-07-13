@@ -128,7 +128,6 @@
     <Property Name="Quyen" Type="Int32" />
     <Property Name="NgayTao" Type="DateTime" Precision="0" />
     <Property Name="MaTK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CheckBox" Type="Boolean" />
     <NavigationProperty Name="giangviens" Relationship="Self.FK__giangvien__MaTK__30F848ED" FromRole="taikhoan" ToRole="giangvien" />
     <NavigationProperty Name="sinhviens" Relationship="Self.FK__sinhvien__MaTK__46E78A0C" FromRole="taikhoan" ToRole="sinhvien" />
   </EntityType>
@@ -294,7 +293,7 @@
     <End Role="giangvien" Type="Self.giangvien" Multiplicity="*" />
     <End Role="mon" Type="Self.mon" Multiplicity="*" />
   </Association>
-  <EntityContainer Name="db_cnpm_v1Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="db_cnpm_v1Entities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Diems" EntityType="Self.Diem" />
     <EntitySet Name="giangviens" EntityType="Self.giangvien" />
     <EntitySet Name="kehoachgiangdays" EntityType="Self.kehoachgiangday" />
