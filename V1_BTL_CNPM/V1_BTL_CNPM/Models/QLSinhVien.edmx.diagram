@@ -4,33 +4,33 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b37c246becfa43559d0249ebda9da19c" Name="Diagram1">
-        <EntityTypeShape EntityType="db_cnpm_v1Model.Diem" Width="1.5" PointX="10.5" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_cnpm_v1Model.giangvien" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_cnpm_v1Model.kehoachgiangday" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_cnpm_v1Model.khoa" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_cnpm_v1Model.lichtrinhthucte" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_cnpm_v1Model.lophocphan" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_cnpm_v1Model.lopmonhoc" Width="1.5" PointX="10.5" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_cnpm_v1Model.mon" Width="1.5" PointX="8.25" PointY="10.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_cnpm_v1Model.nganh" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_cnpm_v1Model.sinhvien" Width="1.5" PointX="5.25" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_cnpm_v1Model.taikhoan" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_cnpm_v1Model.thoigianhoc" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
-        <AssociationConnector Association="db_cnpm_v1Model.FK__Diem__MaMon__4BAC3F29" ManuallyRouted="false" />
-        <AssociationConnector Association="db_cnpm_v1Model.FK__Diem__MaSV__4AB81AF0" ManuallyRouted="false" />
-        <AssociationConnector Association="db_cnpm_v1Model.FK__giangvien__MaKho__31EC6D26" ManuallyRouted="false" />
-        <AssociationConnector Association="db_cnpm_v1Model.FK__giangvien__MaTK__30F848ED" ManuallyRouted="false" />
-        <AssociationConnector Association="db_cnpm_v1Model.FK__kehoachgia__MaGV__37A5467C" ManuallyRouted="false" />
-        <AssociationConnector Association="db_cnpm_v1Model.FK__lichtrinht__MaGV__34C8D9D1" ManuallyRouted="false" />
-        <AssociationConnector Association="db_cnpm_v1Model.FK__nganh__MaKhoa__267ABA7A" ManuallyRouted="false" />
-        <AssociationConnector Association="db_cnpm_v1Model.FK__lophocpha__MaTGH__403A8C7D" ManuallyRouted="false" />
-        <AssociationConnector Association="db_cnpm_v1Model.FK__lopmonhoc__MaMon__2C3393D0" ManuallyRouted="false" />
-        <AssociationConnector Association="db_cnpm_v1Model.FK__mon__MaNganh__29572725" ManuallyRouted="false" />
-        <AssociationConnector Association="db_cnpm_v1Model.FK__sinhvien__MaNgan__47DBAE45" ManuallyRouted="false" />
-        <AssociationConnector Association="db_cnpm_v1Model.FK__sinhvien__MaTK__46E78A0C" ManuallyRouted="false" />
-        <AssociationConnector Association="db_cnpm_v1Model.ctlophp" ManuallyRouted="false" />
-        <AssociationConnector Association="db_cnpm_v1Model.gv_mon" ManuallyRouted="false" />
+      <Diagram DiagramId="fb044aad44f644678e3bf279c67fced3" Name="Diagram1">
+        <EntityTypeShape EntityType="db_cnpm_v2Model.Diem" Width="1.5" PointX="10.5" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_cnpm_v2Model.giangvien" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_cnpm_v2Model.kehoachgiangday" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_cnpm_v2Model.khoa" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_cnpm_v2Model.lichtrinhthucte" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_cnpm_v2Model.lophocphan" Width="1.5" PointX="8.25" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_cnpm_v2Model.lopmonhoc" Width="1.5" PointX="10.5" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_cnpm_v2Model.mon" Width="1.5" PointX="8.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_cnpm_v2Model.nganh" Width="1.5" PointX="3" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_cnpm_v2Model.sinhvien" Width="1.5" PointX="6" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_cnpm_v2Model.taikhoan" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_cnpm_v2Model.thoigianhoc" Width="1.5" PointX="6" PointY="17" IsExpanded="true" />
+        <AssociationConnector Association="db_cnpm_v2Model.FK__Diem__MaMon__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="db_cnpm_v2Model.FK__Diem__MaSV__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="db_cnpm_v2Model.FK__giangvien__MaKho__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="db_cnpm_v2Model.FK__giangvien__MaTK__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="db_cnpm_v2Model.FK__kehoachgia__MaGV__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="db_cnpm_v2Model.FK__lichtrinht__MaGV__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="db_cnpm_v2Model.FK__nganh__MaKhoa__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="db_cnpm_v2Model.FK__sinhvien__MaKhoa__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="db_cnpm_v2Model.FK__lophocpha__MaTGH__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="db_cnpm_v2Model.FK__lopmonhoc__MaMon__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="db_cnpm_v2Model.FK__mon__MaNganh__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="db_cnpm_v2Model.FK__sinhvien__MaTK__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="db_cnpm_v2Model.ctlophp" ManuallyRouted="false" />
+        <AssociationConnector Association="db_cnpm_v2Model.gv_mon" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

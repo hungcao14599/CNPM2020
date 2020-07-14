@@ -25,7 +25,12 @@ namespace V1_BTL_CNPM.Models
         public string MaGV { get; set; }
         public string HoTenGV { get; set; }
         public Nullable<System.DateTime> NgaySinh { get; set; }
+        public string GioiTinh { get; set; }
+        public string QueQuan { get; set; }
+        public string SoDienThoai { get; set; }
+        public string Email { get; set; }
         public string DiaChi { get; set; }
+        public string HinhAnh { get; set; }
         public Nullable<int> MaTK { get; set; }
         public string MaKhoa { get; set; }
     

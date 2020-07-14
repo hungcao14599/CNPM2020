@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="db_cnpm_v1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="db_cnpm_v2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="ctlophp">
     <Key>
       <PropertyRef Name="MaLTM" />
@@ -23,7 +23,12 @@
     <Property Name="MaGV" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="HoTenGV" Type="nvarchar" MaxLength="40" />
     <Property Name="NgaySinh" Type="date" />
-    <Property Name="DiaChi" Type="varchar" MaxLength="30" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="5" />
+    <Property Name="QueQuan" Type="nvarchar" MaxLength="20" />
+    <Property Name="SoDienThoai" Type="varchar" MaxLength="10" />
+    <Property Name="Email" Type="varchar" MaxLength="40" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+    <Property Name="HinhAnh" Type="text" />
     <Property Name="MaTK" Type="int" />
     <Property Name="MaKhoa" Type="varchar" MaxLength="10" />
   </EntityType>
@@ -108,7 +113,7 @@
     <Property Name="Email" Type="varchar" MaxLength="40" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
     <Property Name="HinhAnh" Type="text" />
-    <Property Name="MaNganh" Type="varchar" MaxLength="10" />
+    <Property Name="MaKhoa" Type="varchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="taikhoan">
     <Key>
@@ -297,15 +302,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__sinhvien__MaNgan__47DBAE45">
-    <End Role="nganh" Type="Self.nganh" Multiplicity="0..1" />
+  <Association Name="FK__sinhvien__MaKhoa__47DBAE45">
+    <End Role="khoa" Type="Self.khoa" Multiplicity="0..1" />
     <End Role="sinhvien" Type="Self.sinhvien" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="nganh">
-        <PropertyRef Name="MaNganh" />
+      <Principal Role="khoa">
+        <PropertyRef Name="MaKhoa" />
       </Principal>
       <Dependent Role="sinhvien">
-        <PropertyRef Name="MaNganh" />
+        <PropertyRef Name="MaKhoa" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -321,7 +326,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="db_cnpm_v1ModelStoreContainer">
+  <EntityContainer Name="db_cnpm_v2ModelStoreContainer">
     <EntitySet Name="ctlophp" EntityType="Self.ctlophp" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Diem" EntityType="Self.Diem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="giangvien" EntityType="Self.giangvien" Schema="dbo" store:Type="Tables" />
@@ -392,8 +397,8 @@
       <End Role="khoa" EntitySet="khoa" />
       <End Role="nganh" EntitySet="nganh" />
     </AssociationSet>
-    <AssociationSet Name="FK__sinhvien__MaNgan__47DBAE45" Association="Self.FK__sinhvien__MaNgan__47DBAE45">
-      <End Role="nganh" EntitySet="nganh" />
+    <AssociationSet Name="FK__sinhvien__MaKhoa__47DBAE45" Association="Self.FK__sinhvien__MaKhoa__47DBAE45">
+      <End Role="khoa" EntitySet="khoa" />
       <End Role="sinhvien" EntitySet="sinhvien" />
     </AssociationSet>
     <AssociationSet Name="FK__sinhvien__MaTK__46E78A0C" Association="Self.FK__sinhvien__MaTK__46E78A0C">

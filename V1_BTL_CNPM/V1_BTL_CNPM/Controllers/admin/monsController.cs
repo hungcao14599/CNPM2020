@@ -12,7 +12,7 @@ namespace V1_BTL_CNPM.Controllers.admin
 {
     public class monsController : BaseController
     {
-        private db_cnpm_v1Entities1 db = new db_cnpm_v1Entities1();
+        private db_cnpm_v2Entities db = new db_cnpm_v2Entities();
 
         // GET: mons
         public ActionResult Index()

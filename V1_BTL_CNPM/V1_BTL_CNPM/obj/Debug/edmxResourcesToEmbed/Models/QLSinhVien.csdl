@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="db_cnpm_v1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="db_cnpm_v2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Diem">
     <Key>
       <PropertyRef Name="Diem1" />
@@ -17,7 +17,12 @@
     <Property Name="MaGV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="HoTenGV" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
     <Property Name="NgaySinh" Type="DateTime" Precision="0" />
-    <Property Name="DiaChi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="GioiTinh" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="QueQuan" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SoDienThoai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="MaTK" Type="Int32" />
     <Property Name="MaKhoa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="khoa" Relationship="Self.FK__giangvien__MaKho__31EC6D26" FromRole="giangvien" ToRole="khoa" />
@@ -45,6 +50,7 @@
     <Property Name="TenKhoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="giangviens" Relationship="Self.FK__giangvien__MaKho__31EC6D26" FromRole="khoa" ToRole="giangvien" />
     <NavigationProperty Name="nganhs" Relationship="Self.FK__nganh__MaKhoa__267ABA7A" FromRole="khoa" ToRole="nganh" />
+    <NavigationProperty Name="sinhviens" Relationship="Self.FK__sinhvien__MaKhoa__47DBAE45" FromRole="khoa" ToRole="sinhvien" />
   </EntityType>
   <EntityType Name="lichtrinhthucte">
     <Key>
@@ -98,7 +104,6 @@
     <Property Name="MaKhoa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="khoa" Relationship="Self.FK__nganh__MaKhoa__267ABA7A" FromRole="nganh" ToRole="khoa" />
     <NavigationProperty Name="mons" Relationship="Self.FK__mon__MaNganh__29572725" FromRole="nganh" ToRole="mon" />
-    <NavigationProperty Name="sinhviens" Relationship="Self.FK__sinhvien__MaNgan__47DBAE45" FromRole="nganh" ToRole="sinhvien" />
   </EntityType>
   <EntityType Name="sinhvien">
     <Key>
@@ -114,9 +119,9 @@
     <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="MaNganh" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MaKhoa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Diems" Relationship="Self.FK__Diem__MaSV__4AB81AF0" FromRole="sinhvien" ToRole="Diem" />
-    <NavigationProperty Name="nganh" Relationship="Self.FK__sinhvien__MaNgan__47DBAE45" FromRole="sinhvien" ToRole="nganh" />
+    <NavigationProperty Name="khoa" Relationship="Self.FK__sinhvien__MaKhoa__47DBAE45" FromRole="sinhvien" ToRole="khoa" />
     <NavigationProperty Name="taikhoan" Relationship="Self.FK__sinhvien__MaTK__46E78A0C" FromRole="sinhvien" ToRole="taikhoan" />
   </EntityType>
   <EntityType Name="taikhoan">
@@ -225,6 +230,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__sinhvien__MaKhoa__47DBAE45">
+    <End Role="khoa" Type="Self.khoa" Multiplicity="0..1" />
+    <End Role="sinhvien" Type="Self.sinhvien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="sinhvien">
+        <PropertyRef Name="MaKhoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__lophocpha__MaTGH__403A8C7D">
     <End Role="thoigianhoc" Type="Self.thoigianhoc" Multiplicity="0..1" />
     <End Role="lophocphan" Type="Self.lophocphan" Multiplicity="*" />
@@ -261,18 +278,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__sinhvien__MaNgan__47DBAE45">
-    <End Role="nganh" Type="Self.nganh" Multiplicity="0..1" />
-    <End Role="sinhvien" Type="Self.sinhvien" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="nganh">
-        <PropertyRef Name="MaNganh" />
-      </Principal>
-      <Dependent Role="sinhvien">
-        <PropertyRef Name="MaNganh" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__sinhvien__MaTK__46E78A0C">
     <End Role="taikhoan" Type="Self.taikhoan" Multiplicity="0..1" />
     <End Role="sinhvien" Type="Self.sinhvien" Multiplicity="*" />
@@ -293,7 +298,7 @@
     <End Role="giangvien" Type="Self.giangvien" Multiplicity="*" />
     <End Role="mon" Type="Self.mon" Multiplicity="*" />
   </Association>
-  <EntityContainer Name="db_cnpm_v1Entities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="db_cnpm_v2Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Diems" EntityType="Self.Diem" />
     <EntitySet Name="giangviens" EntityType="Self.giangvien" />
     <EntitySet Name="kehoachgiangdays" EntityType="Self.kehoachgiangday" />
@@ -334,6 +339,10 @@
       <End Role="khoa" EntitySet="khoas" />
       <End Role="nganh" EntitySet="nganhs" />
     </AssociationSet>
+    <AssociationSet Name="FK__sinhvien__MaKhoa__47DBAE45" Association="Self.FK__sinhvien__MaKhoa__47DBAE45">
+      <End Role="khoa" EntitySet="khoas" />
+      <End Role="sinhvien" EntitySet="sinhviens" />
+    </AssociationSet>
     <AssociationSet Name="FK__lophocpha__MaTGH__403A8C7D" Association="Self.FK__lophocpha__MaTGH__403A8C7D">
       <End Role="thoigianhoc" EntitySet="thoigianhocs" />
       <End Role="lophocphan" EntitySet="lophocphans" />
@@ -345,10 +354,6 @@
     <AssociationSet Name="FK__mon__MaNganh__29572725" Association="Self.FK__mon__MaNganh__29572725">
       <End Role="nganh" EntitySet="nganhs" />
       <End Role="mon" EntitySet="mons" />
-    </AssociationSet>
-    <AssociationSet Name="FK__sinhvien__MaNgan__47DBAE45" Association="Self.FK__sinhvien__MaNgan__47DBAE45">
-      <End Role="nganh" EntitySet="nganhs" />
-      <End Role="sinhvien" EntitySet="sinhviens" />
     </AssociationSet>
     <AssociationSet Name="FK__sinhvien__MaTK__46E78A0C" Association="Self.FK__sinhvien__MaTK__46E78A0C">
       <End Role="taikhoan" EntitySet="taikhoans" />

@@ -1,6 +1,27 @@
 ﻿
 @model IEnumerable<V1_BTL_CNPM.Models.khoa>
 
+    <style>
+        .tk {
+            width: 250px;
+            box-sizing: border-box;
+            border: 2px solid #8f8f8f;
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: white;
+            background-image: url('https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-256.png');
+            background-size: 27px;
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+
+        input[type=text]:focus {
+            width: 50%;
+        }
+    </style>
 
 <p>
 
@@ -13,7 +34,8 @@
 
     <p>
 
-        Nhập thông tin: @Html.TextBox("SearchString")  <input type="submit" value="Tìm kiếm" />
+        @*Nhập thông tin: @Html.TextBox("SearchString")  <input type="submit" value="Tìm kiếm" />*@ 
+        <input type="text" name="SearchString" placeholder="Tìm kiếm thông tin..." id="SearchString" class="tk">
 
     </p>
     /*
@@ -92,5 +114,5 @@
 
     </table>
     <div>
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Back to List", "Khoa")
     </div>

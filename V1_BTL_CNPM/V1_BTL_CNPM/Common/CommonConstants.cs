@@ -11,6 +11,11 @@ namespace V1_BTL_CNPM.Common
         public static string SESSION_CREDENTIALS = "SESSION_CREDENTIALS";
         public static string CartSession = "CartSession";
 
+
+        public static int ADMIN = 1;
+        public static int GIANGVIEN = 2;
+        public static int SINHVIEN = 3;
+
         public static string CurrentCulture { set; get; }
     }
 }

@@ -18,7 +18,6 @@ namespace V1_BTL_CNPM.Models
         public nganh()
         {
             this.mons = new HashSet<mon>();
-            this.sinhviens = new HashSet<sinhvien>();
         }
     
         public string MaNganh { get; set; }
@@ -28,7 +27,5 @@ namespace V1_BTL_CNPM.Models
         public virtual khoa khoa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<mon> mons { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<sinhvien> sinhviens { get; set; }
     }
 }

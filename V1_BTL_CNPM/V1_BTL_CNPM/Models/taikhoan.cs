@@ -21,12 +21,10 @@ namespace V1_BTL_CNPM.Models
             this.giangviens = new HashSet<giangvien>();
             this.sinhviens = new HashSet<sinhvien>();
         }
-
-        [Required(ErrorMessage = "Hãy nhập tài khoản")]
-
+    
         public string TenTaiKhoan { get; set; }
 
-        [Required(ErrorMessage = "Hãy nhập tài khoản")]
+        [Required(ErrorMessage = "Tài khoản hoặc mật khẩu không đúng.")]
         public string MatKhau { get; set; }
         public int Quyen { get; set; }
         public Nullable<System.DateTime> NgayTao { get; set; }

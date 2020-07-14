@@ -30,11 +30,11 @@ namespace V1_BTL_CNPM.Models
         public string Email { get; set; }
         public string DiaChi { get; set; }
         public string HinhAnh { get; set; }
-        public string MaNganh { get; set; }
+        public string MaKhoa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Diem> Diems { get; set; }
-        public virtual nganh nganh { get; set; }
+        public virtual khoa khoa { get; set; }
         public virtual taikhoan taikhoan { get; set; }
     }
 }

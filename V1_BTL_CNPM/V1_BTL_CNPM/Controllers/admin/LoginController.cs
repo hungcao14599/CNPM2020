@@ -9,7 +9,7 @@ namespace V1_BTL_CNPM.Controllers
     public class LoginController : Controller
     {
 
-        private db_cnpm_v1Entities1 db = new db_cnpm_v1Entities1();
+        private db_cnpm_v2Entities db = new db_cnpm_v2Entities();
 
         // GET: Login
         public ActionResult Index()
@@ -77,7 +77,7 @@ namespace V1_BTL_CNPM.Controllers
             if (ModelState.IsValid)
             {
 
-                var result = CheckLogin(model.TenTaiKhoan, model.MatKhau);
+                var result = CheckLogin(model.TenTaiKhoan, model.MatKhau, true);
                 if (result == 1)
                 {
                     var user = GetById(model.TenTaiKhoan);
@@ -90,12 +90,12 @@ namespace V1_BTL_CNPM.Controllers
 
                     //Session.Add(CommonConstants.SESSION_CREDENTIALS, listCredentials);
                     Session.Add(CommonConstants.USER_SESSION, userSession);
-                    return RedirectToAction("Index", "nganhs");
+                    return RedirectToAction("Index", "MainAdmin");
                 }
                 else if (result == 0)
                 {
-                    ModelState.AddModelError("", "Tài khoản không tồn tại.");
-                    //Response.Write("<script>alert('Bạn không phải admin, bạn không đủ quyền truy cập11111')</script>");
+                    //ModelState.AddModelError("", "Tài khoản không tồn tại.");
+                    Response.Write("<script>alert('Tài khoản không tồn tại')</script>");
                 }
                 else if (result == -1)
                 {
@@ -107,17 +107,20 @@ namespace V1_BTL_CNPM.Controllers
                 }
                 else if (result == -3)
                 {
-                    ModelState.AddModelError("", "Tài khoản của bạn không có quyền đăng nhập.");
+                    //ModelState.AddModelError("", "Tài khoản của bạn không có quyền đăng nhập.");
+                    Response.Write("<script>alert('Bạn không phải admin, bạn không đủ quyền truy cập')</script>");
 
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Đăng nhập không đúng.");
+                    //ModelState.AddModelError("", "Đăng nhập không đúng.");
+                    Response.Write("<script>alert('Đăng nhập không đúng')</script>");
                 }
             }
             else
             {
                 ModelState.AddModelError("", "Đăng nhập không đúng.");
+                //Response.Write("<script>alert('Đăng nhập không đúng')</script>");
             }
             return View("Index");
 
@@ -127,7 +130,7 @@ namespace V1_BTL_CNPM.Controllers
         public ActionResult Logout()
         {
             Session[CommonConstants.USER_SESSION] = null;
-            return RedirectToAction("Index", "nganhs");
+            return RedirectToAction("Login", "Login");
         }
 
 
@@ -136,19 +139,37 @@ namespace V1_BTL_CNPM.Controllers
         {
             return db.taikhoans.SingleOrDefault(x => x.TenTaiKhoan == userName);
         }
-        public int CheckLogin(string userName, string passWord)
+        public int CheckLogin(string userName, string passWord, bool isAminLogin = false)
         {
-            var result = db.taikhoans.SingleOrDefault(x => x.TenTaiKhoan == userName);
+            var result = db.taikhoans.FirstOrDefault(x => x.TenTaiKhoan == userName);
             if (result == null)
             {
                 return 0;
             }
             else
             {
-                if (result.MatKhau == passWord)
-                    return 1;
+                if(isAminLogin == true)
+                {
+                    if(result.Quyen == CommonConstants.ADMIN)
+                    {
+                        if (result.MatKhau == passWord)
+                            return 1;
+                        else
+                            return -2;
+                    }
+                    else
+                    {
+                        return -3;
+                    }
+                }
                 else
-                    return -2;
+                {
+                    if (result.MatKhau == passWord)
+                        return 1;
+                    else
+                        return -2;
+                }
+                
 
 
             }

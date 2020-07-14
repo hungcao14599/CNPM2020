@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\CNPM_2020\V1_BTL_CNPM\V1_BTL_CNPM\Models\QLSinhVien.edmx'. 
+﻿// T4 code generation is enabled for model 'E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\Models\QLSinhVien.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

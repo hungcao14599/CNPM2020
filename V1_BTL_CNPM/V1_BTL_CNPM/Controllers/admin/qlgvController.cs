@@ -12,7 +12,7 @@ namespace V1_BTL_CNPM.Controllers.admin
     {
         // GET: qlgv
 
-        private db_cnpm_v1Entities1 db = new db_cnpm_v1Entities1();
+        private db_cnpm_v2Entities db = new db_cnpm_v2Entities();
 
         public ActionResult qlgv()
         {
@@ -25,68 +25,24 @@ namespace V1_BTL_CNPM.Controllers.admin
                            MaTK = a.MaTK,
                            TenTaiKhoan = a.TenTaiKhoan,
                            MatKhau = a.MatKhau,
-                           Quyen = a.Quyen,
+
                            MaGV = b.MaGV,
                            HoTenGV = b.HoTenGV,
                            MaKhoa = b.MaKhoa,
                            NgaySinh = b.NgaySinh,
                            DiaChi = b.DiaChi,
+                           Email = b.Email,
+                           SoDienThoai = b.SoDienThoai,
+                           QueQuan = b.QueQuan,
+                           HinhAnh = b.HinhAnh,
                            
 
                        };
             return View(user);
         }
 
-        public ActionResult create_qlgv()
-        {
-            ViewBag.MaKhoa = new SelectList(db.khoas, "MaKhoa", "TenKhoa");
-            return View();
-        }
+  
 
-
-        [HttpPost]
-        public ActionResult create_qlgv(qlgv user)
-        {
-            try
-            {
-                //ViewBag.MaTK = new SelectList(db.taikhoans, "MaTK", "TenTaiKhoan");
-
-
-                taikhoan tk = new taikhoan();
-                /*if(tk.Quyen == 2)
-                {*/
-                    tk.MaTK = user.MaTK;
-                    tk.TenTaiKhoan = user.TenTaiKhoan;
-                    tk.MatKhau = user.MatKhau;
-                    tk.Quyen = user.Quyen;
-                    db.taikhoans.Add(tk);
-                    db.SaveChanges();
-                    int matk = tk.MaTK;
-                    giangvien gv = new giangvien();
-                    gv.MaGV = user.MaGV;
-                    gv.HoTenGV = user.HoTenGV;
-                    gv.NgaySinh = user.NgaySinh;
-                    gv.DiaChi = user.DiaChi;
-                    gv.MaKhoa = user.MaKhoa;
-                    gv.MaTK = matk;
-                    db.giangviens.Add(gv);
-                    db.SaveChanges();
-                /*}
-                else
-                {
-
-                }*/
-                
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-
-            return RedirectToAction("qlsv");
-
-
-        }
+        
     }
 }

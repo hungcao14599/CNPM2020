@@ -131,8 +131,10 @@
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\admin\BaseController.cs" />
+    <Compile Include="Controllers\admin\MainAdminController.cs" />
     <Compile Include="Controllers\admin\monsController.cs" />
     <Compile Include="Controllers\admin\qlgvController.cs" />
+    <Compile Include="Controllers\admin\QLTaiKhoanController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\admin\khoasController.cs" />
@@ -190,6 +192,7 @@
     <Compile Include="Models\taikhoan.cs">
       <DependentUpon>QLSinhVien.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\taotaikhoan.cs" />
     <Compile Include="Models\thoigianhoc.cs">
       <DependentUpon>QLSinhVien.tt</DependentUpon>
     </Compile>
@@ -2228,6 +2231,9 @@
     <Content Include="Views\qlgv\create_qlgv.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\MainAdmin\Index.cshtml" />
+    <Content Include="Views\QLTaiKhoan\create_taikhoan.cshtml" />
+    <Content Include="Views\QLTaiKhoan\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
