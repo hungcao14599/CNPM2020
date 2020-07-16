@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -11,8 +12,9 @@ namespace V1_BTL_CNPM.Models
         public string MaGV { get; set; }
         public string HoTenGV { get; set; }
 
-        public bool CheckBox { get; set; }
+        //public bool CheckBox { get; set; }
 
+        //[DataType(DataType.Date)]
         public Nullable<System.DateTime> NgaySinh { get; set; }
         public string DiaChi { get; set; }
         public int MaTK { get; set; }

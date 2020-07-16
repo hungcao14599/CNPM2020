@@ -1,0 +1,63 @@
+﻿@model IEnumerable<V1_BTL_CNPM.Models.giangvien>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4>Thông tin giảng viên</h4>
+
+@RenderPage("../Shared/toptable.cshtml")
+<thead>
+    <tr role="row">
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 58px;">Mã TK</th>
+
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 68px;">Mã GV</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Tên GV</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Mã khoa</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Ngày sinh</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Địa chỉ</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">SĐT</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Email</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Chức năng</th>
+
+    </tr>
+</thead>
+
+
+@foreach (var item in Model)
+{
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaTK)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaGV)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HoTenGV)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaKhoa)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NgaySinh)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DiaChi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SoDienThoai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.MaGV }) |
+        @Html.ActionLink("Details", "Details", new { id = item.MaGV }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.MaGV })
+    </td>
+</tr>
+}
+
+@RenderPage("../Shared/bottomtable.cshtml")

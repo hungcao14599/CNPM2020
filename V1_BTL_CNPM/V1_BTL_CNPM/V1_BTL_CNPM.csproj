@@ -131,10 +131,13 @@
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\admin\BaseController.cs" />
+    <Compile Include="Controllers\admin\giangviensController.cs" />
     <Compile Include="Controllers\admin\MainAdminController.cs" />
     <Compile Include="Controllers\admin\monsController.cs" />
     <Compile Include="Controllers\admin\qlgvController.cs" />
+    <Compile Include="Controllers\admin\qlsvController.cs" />
     <Compile Include="Controllers\admin\QLTaiKhoanController.cs" />
+    <Compile Include="Controllers\admin\sinhviensController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\admin\khoasController.cs" />
@@ -186,6 +189,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLSinhVien.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\qlsv.cs" />
     <Compile Include="Models\sinhvien.cs">
       <DependentUpon>QLSinhVien.tt</DependentUpon>
     </Compile>
@@ -1923,6 +1927,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\170.png" />
     <Content Include="Models\QLSinhVien.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLSinhVien.edmx</DependentUpon>
@@ -2228,12 +2233,23 @@
     <Content Include="Views\Client\Main.cshtml" />
     <Content Include="Views\Client\LoginUser.cshtml" />
     <Content Include="Views\qlgv\qlgv.cshtml" />
-    <Content Include="Views\qlgv\create_qlgv.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\MainAdmin\Index.cshtml" />
     <Content Include="Views\QLTaiKhoan\create_taikhoan.cshtml" />
-    <Content Include="Views\QLTaiKhoan\Index.cshtml" />
+    <Content Include="Views\QLTaiKhoan\QLTaiKhoan.cshtml" />
+    <Content Include="Views\qlsv\qlsv.cshtml" />
+    <Content Include="Views\sinhviens\Create.cshtml" />
+    <Content Include="Views\sinhviens\Delete.cshtml" />
+    <Content Include="Views\sinhviens\Details.cshtml" />
+    <Content Include="Views\sinhviens\Edit.cshtml" />
+    <Content Include="Views\sinhviens\Index.cshtml" />
+    <Content Include="Views\QLTaiKhoan\Edit_dssv.cshtml" />
+    <Content Include="Views\giangviens\Create.cshtml" />
+    <Content Include="Views\giangviens\Delete.cshtml" />
+    <Content Include="Views\giangviens\Details.cshtml" />
+    <Content Include="Views\giangviens\Edit.cshtml" />
+    <Content Include="Views\giangviens\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

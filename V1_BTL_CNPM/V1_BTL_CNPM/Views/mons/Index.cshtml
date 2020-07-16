@@ -4,36 +4,42 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h4>Thông tin môn học</h4>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Tạo mới", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TenMon)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nganh.TenNganh)
-        </th>
-        <th></th>
-    </tr>
+@RenderPage("../Shared/toptable.cshtml")
+<tr>
+    <th rowspan="1" colspan="1">Mã môn</th>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenMon)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nganh.TenNganh)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaMon }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaMon }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaMon })
-        </td>
-    </tr>
+    <th rowspan="1" colspan="1">Tên môn</th>
+
+    <th rowspan="1" colspan="1">Mã ngành</th>
+
+    <th rowspan="1" colspan="1">Chức năng</th>
+</tr>
+
+
+@foreach (var item in Model)
+{
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaMon)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenMon)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.nganh.TenNganh)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.MaMon }) |
+        @Html.ActionLink("Details", "Details", new { id = item.MaMon }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.MaMon })
+    </td>
+</tr>
 }
 
-</table>
+@RenderPage("../Shared/bottomtable.cshtml")

@@ -1,8 +1,12 @@
-﻿
-@model IEnumerable<V1_BTL_CNPM.Models.qlgv>
+﻿@model IEnumerable<V1_BTL_CNPM.Models.qlsv>
 @{
-    ViewBag.Title = "qlgv";
+    ViewBag.Title = "qlsv";
 }
+
+
+<h4>Thông tin sinh viên</h4>
+
+
 
 <!--
 <h2>ShowData</h2>
@@ -50,8 +54,6 @@
 </div>
     -->
 
-<h4>Thông tin giảng viên</h4>
-
 
 @RenderPage("../Shared/toptable.cshtml")
 
@@ -59,14 +61,14 @@
     <tr role="row">
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 58px;">Mã TK</th>
 
-        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 68px;">Mã GV</th>
-        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Tên GV</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 68px;">Mã SV</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Tên SV</th>
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Mã khoa</th>
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Ngày sinh</th>
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Địa chỉ</th>
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Số điện thoại</th>
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Email</th>
-        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Hình ảnh</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Chức năng</th>
 
     </tr>
 </thead>
@@ -90,8 +92,8 @@
     {
     <tr>
         <th scope="row">@item.MaTK</th>
-        <td>@item.MaGV</td>
-        <td>@item.HoTenGV</td>
+        <td>@item.MaSV</td>
+        <td>@item.TenSV</td>
         <td>@item.MaKhoa</td>
         <td>@item.NgaySinh</td>
         <td>@item.DiaChi</td>
@@ -99,16 +101,11 @@
         <td>@item.SoDienThoai</td>
 
         <td>@item.Email</td>
-        @try
-        {
-
-            <td> <img src="../../Images/@item.HinhAnh" alt="images" width="100" height="100" /> </td>
-
-            
-
-        }
-        catch { }
-
+        <td>
+            @Html.ActionLink("Edit", "../sinhviens/Edit", new { id = item.MaTK }) |
+            @Html.ActionLink("Details", "Details", new { id = item.MaTK }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MaTK })
+        </td>
 
     </tr>
 
@@ -119,3 +116,4 @@
 
 </tbody>
 @RenderPage("../Shared/bottomtable.cshtml")
+

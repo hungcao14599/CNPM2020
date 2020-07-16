@@ -1,44 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using V1_BTL_CNPM.Models;
 
-
 namespace V1_BTL_CNPM.Controllers.admin
 {
-    public class qlgvController : BaseController
+    public class qlsvController : Controller
     {
-        // GET: qlgv
-
         private db_cnpm_v2Entities db = new db_cnpm_v2Entities();
 
-        public ActionResult qlgv()
+        public ActionResult qlsv()
         {
             var user = from a in db.taikhoans
-                       join b in db.giangviens
+                       join b in db.sinhviens
                        on a.MaTK equals b.MaTK
 
-                       select new qlgv()
+                       select new qlsv()
                        {
-                           
                            MaTK = a.MaTK,
-                           MaGV = b.MaGV,
-                           HoTenGV = b.HoTenGV,
+                           
+
+                           MaSV = b.MaSV,
+                           TenSV = b.TenSV,
                            MaKhoa = b.MaKhoa,
                            NgaySinh = b.NgaySinh,
                            DiaChi = b.DiaChi,
-                           SoDienThoai = b.SoDienThoai,
                            Email = b.Email,
-            
+                           SoDienThoai = b.SoDienThoai,
+                           
+                           HinhAnh = b.HinhAnh,
+
+
                        };
             return View(user);
-            //return View(db.giangviens.ToList());
         }
 
-  
-
         
+
+
+
     }
 }

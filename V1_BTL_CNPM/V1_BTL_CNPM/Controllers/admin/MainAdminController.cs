@@ -17,5 +17,12 @@ namespace V1_BTL_CNPM.Controllers.admin
 
             return View();
         }
+
+        public ActionResult CountKhoa()
+        {
+            var africa = db.khoas.Where(x => x.MaKhoa.Equals("MaKhoa")).Count();
+            ViewBag.africa = africa;
+            return View();
+        }
     }
 }

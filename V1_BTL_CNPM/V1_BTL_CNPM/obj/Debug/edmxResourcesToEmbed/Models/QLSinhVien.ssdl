@@ -28,7 +28,7 @@
     <Property Name="SoDienThoai" Type="varchar" MaxLength="10" />
     <Property Name="Email" Type="varchar" MaxLength="40" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
-    <Property Name="HinhAnh" Type="text" />
+    <Property Name="HinhAnh" Type="varchar" MaxLength="250" />
     <Property Name="MaTK" Type="int" />
     <Property Name="MaKhoa" Type="varchar" MaxLength="10" />
   </EntityType>
@@ -112,7 +112,7 @@
     <Property Name="SoDienThoai" Type="varchar" MaxLength="10" />
     <Property Name="Email" Type="varchar" MaxLength="40" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
-    <Property Name="HinhAnh" Type="text" />
+    <Property Name="HinhAnh" Type="varchar" MaxLength="250" />
     <Property Name="MaKhoa" Type="varchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="taikhoan">

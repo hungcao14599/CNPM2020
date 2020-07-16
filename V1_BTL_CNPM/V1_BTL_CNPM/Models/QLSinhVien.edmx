@@ -33,7 +33,7 @@
           <Property Name="SoDienThoai" Type="varchar" MaxLength="10" />
           <Property Name="Email" Type="varchar" MaxLength="40" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
-          <Property Name="HinhAnh" Type="text" />
+          <Property Name="HinhAnh" Type="varchar" MaxLength="250" />
           <Property Name="MaTK" Type="int" />
           <Property Name="MaKhoa" Type="varchar" MaxLength="10" />
         </EntityType>
@@ -117,7 +117,7 @@
           <Property Name="SoDienThoai" Type="varchar" MaxLength="10" />
           <Property Name="Email" Type="varchar" MaxLength="40" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
-          <Property Name="HinhAnh" Type="text" />
+          <Property Name="HinhAnh" Type="varchar" MaxLength="250" />
           <Property Name="MaKhoa" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="taikhoan">
@@ -438,7 +438,7 @@
           <Property Name="SoDienThoai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HinhAnh" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="MaTK" Type="Int32" />
           <Property Name="MaKhoa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="khoa" Relationship="Self.FK__giangvien__MaKho__31EC6D26" FromRole="giangvien" ToRole="khoa" />
@@ -534,7 +534,7 @@
           <Property Name="SoDienThoai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HinhAnh" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="MaKhoa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Diems" Relationship="Self.FK__Diem__MaSV__4AB81AF0" FromRole="sinhvien" ToRole="Diem" />
           <NavigationProperty Name="khoa" Relationship="Self.FK__sinhvien__MaKhoa__47DBAE45" FromRole="sinhvien" ToRole="khoa" />
