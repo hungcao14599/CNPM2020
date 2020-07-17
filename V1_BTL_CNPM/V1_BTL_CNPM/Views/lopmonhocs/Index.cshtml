@@ -1,0 +1,44 @@
+﻿@model IEnumerable<V1_BTL_CNPM.Models.lopmonhoc>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4>Thông tin lớp môn học</h4>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+@RenderPage("../Shared/toptable.cshtml")
+<tr>
+
+    <th rowspan="1" colspan="1">Mã lớp môn học</th>
+
+    <th rowspan="1" colspan="1">Tên lớp môn học</th>
+
+    <th rowspan="1" colspan="1">Môn học</th>
+
+    <th rowspan="1" colspan="1">Chức năng</th>
+</tr>
+
+@foreach (var item in Model)
+{
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaLTM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenLopMon)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.mon.TenMon)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.MaLTM }) |
+        @Html.ActionLink("Details", "Details", new { id = item.MaLTM }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.MaLTM })
+    </td>
+</tr>
+}
+
+@RenderPage("../Shared/bottomtable.cshtml")

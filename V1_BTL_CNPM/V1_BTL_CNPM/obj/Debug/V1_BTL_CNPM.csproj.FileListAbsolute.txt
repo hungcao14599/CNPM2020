@@ -80,9 +80,7 @@ E:\CNPM_2020\V1_BTL_CNPM\V1_BTL_CNPM\obj\Debug\V1_BTL_CNPM.csproj.CoreCompileInp
 E:\CNPM_2020\V1_BTL_CNPM\V1_BTL_CNPM\obj\Debug\V1_BTL_CNPM.csproj.CopyComplete
 E:\CNPM_2020\V1_BTL_CNPM\V1_BTL_CNPM\obj\Debug\V1_BTL_CNPM.dll
 E:\CNPM_2020\V1_BTL_CNPM\V1_BTL_CNPM\obj\Debug\V1_BTL_CNPM.pdb
-E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\System.Diagnostics.StackTrace.dll
-E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\V1_BTL_CNPM.dll.config
 E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\V1_BTL_CNPM.dll
 E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\V1_BTL_CNPM.pdb
@@ -93,7 +91,6 @@ E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\csi.exe
 E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\csi.exe.config
 E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\csi.rsp
 E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
 E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\Microsoft.CodeAnalysis.dll
 E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
@@ -108,8 +105,11 @@ E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\System.AppContext.dll
 E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\System.Collections.Immutable.dll
 E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\System.Console.dll
 E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\System.Diagnostics.StackTrace.dll
 E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\System.Globalization.Calendars.dll
 E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\System.IO.Compression.dll
+E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\System.IO.Compression.ZipFile.dll
 E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\System.IO.FileSystem.dll
 E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\System.IO.FileSystem.Primitives.dll
 E:\CNPM_2020\CNPM2020\V1_BTL_CNPM\V1_BTL_CNPM\bin\roslyn\System.Net.Http.dll

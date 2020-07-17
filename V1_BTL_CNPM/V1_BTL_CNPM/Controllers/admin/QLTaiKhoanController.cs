@@ -40,8 +40,14 @@ namespace V1_BTL_CNPM.Controllers.admin
         {
             if (ModelState.IsValid)
             {
+                string FileName = Path.GetFileNameWithoutExtension(user.ImageFile.FileName);
+                string extension = Path.GetExtension(user.ImageFile.FileName);
+                FileName = FileName + DateTime.Now.ToString("yymmssff") + extension;
+                user.HinhAnh = "~/Images/" + FileName;
+                FileName = Path.Combine(Server.MapPath("~/Images"), FileName);
+                //user.ImageFile.SaveAs(user.HinhAnh);
+                user.ImageFile.SaveAs(FileName);
 
-              
 
                 if (CheckUser(user.TenTaiKhoan))
                 {
@@ -50,7 +56,7 @@ namespace V1_BTL_CNPM.Controllers.admin
                 }
                 else
                 {
-                    string FileName = Path.GetFileNameWithoutExtension(user.ImageFile.FileName);
+                    /*string FileName = Path.GetFileNameWithoutExtension(user.ImageFile.FileName);
 
                     //To Get File Extension  
                     string FileExtension = Path.GetExtension(user.ImageFile.FileName);
@@ -65,7 +71,12 @@ namespace V1_BTL_CNPM.Controllers.admin
                     user.HinhAnh = UploadPath + FileName;
 
                     //To copy and save file into server.  
-                    user.ImageFile.SaveAs(user.HinhAnh);
+                    user.ImageFile.SaveAs(user.HinhAnh);*/
+
+
+
+                    
+
 
 
                     taikhoan tk = new taikhoan();

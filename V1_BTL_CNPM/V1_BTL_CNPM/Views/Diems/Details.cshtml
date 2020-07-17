@@ -1,0 +1,34 @@
+﻿@model V1_BTL_CNPM.Models.Diem
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Diem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.mon.TenMon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mon.TenMon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sinhvien.TenSV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sinhvien.TenSV)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Diem1 }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

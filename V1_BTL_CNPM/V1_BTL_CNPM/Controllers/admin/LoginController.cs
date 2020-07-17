@@ -126,10 +126,11 @@ namespace V1_BTL_CNPM.Controllers
 
         }
 
-        [Authorize]
+        
         public ActionResult Logout()
         {
             Session[CommonConstants.USER_SESSION] = null;
+            FormsAuthentication.SignOut();
             return RedirectToAction("Login", "Login");
         }
 

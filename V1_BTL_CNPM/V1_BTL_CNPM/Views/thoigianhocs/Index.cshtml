@@ -1,0 +1,51 @@
+﻿@model IEnumerable<V1_BTL_CNPM.Models.thoigianhoc>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4>Thông tin thời gian học</h4>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+@RenderPage("../Shared/toptable.cshtml")
+
+<tr>
+
+    <th rowspan="1" colspan="1">Mã thời gian học</th>
+
+    <th rowspan="1" colspan="1">Năm học</th>
+
+    <th rowspan="1" colspan="1">Học kỳ</th>
+
+    <th rowspan="1" colspan="1">Giai đoạn</th>
+
+    <th rowspan="1" colspan="1">Chức năng</th>
+</tr>
+
+@foreach (var item in Model)
+{
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaTGH)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NamHoc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HocKy)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GiaiDoan)
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.MaTGH }) |
+        @Html.ActionLink("Details", "Details", new { id = item.MaTGH }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.MaTGH })
+    </td>
+</tr>
+}
+
+@RenderPage("../Shared/bottomtable.cshtml")

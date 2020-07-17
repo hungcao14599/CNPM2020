@@ -14,10 +14,10 @@
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 68px;">Mã GV</th>
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Tên GV</th>
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Mã khoa</th>
-        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Ngày sinh</th>
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Địa chỉ</th>
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">SĐT</th>
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Email</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Hình ảnh</th>
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Chức năng</th>
 
     </tr>
@@ -39,9 +39,7 @@
     <td>
         @Html.DisplayFor(modelItem => item.MaKhoa)
     </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.NgaySinh)
-    </td>
+
     <td>
         @Html.DisplayFor(modelItem => item.DiaChi)
     </td>
@@ -50,6 +48,10 @@
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Email)
+    </td>
+
+    <td>
+        <img src="@Url.Content(item.HinhAnh)" width="100" height="100"/>
     </td>
 
     <td>

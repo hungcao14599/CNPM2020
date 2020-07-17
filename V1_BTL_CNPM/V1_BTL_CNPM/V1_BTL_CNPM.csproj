@@ -131,13 +131,17 @@
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\admin\BaseController.cs" />
+    <Compile Include="Controllers\admin\DiemsController.cs" />
     <Compile Include="Controllers\admin\giangviensController.cs" />
+    <Compile Include="Controllers\admin\lophocphansController.cs" />
+    <Compile Include="Controllers\admin\lopmonhocsController.cs" />
     <Compile Include="Controllers\admin\MainAdminController.cs" />
     <Compile Include="Controllers\admin\monsController.cs" />
     <Compile Include="Controllers\admin\qlgvController.cs" />
     <Compile Include="Controllers\admin\qlsvController.cs" />
     <Compile Include="Controllers\admin\QLTaiKhoanController.cs" />
     <Compile Include="Controllers\admin\sinhviensController.cs" />
+    <Compile Include="Controllers\admin\thoigianhocsController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\admin\khoasController.cs" />
@@ -2250,6 +2254,26 @@
     <Content Include="Views\giangviens\Details.cshtml" />
     <Content Include="Views\giangviens\Edit.cshtml" />
     <Content Include="Views\giangviens\Index.cshtml" />
+    <Content Include="Views\thoigianhocs\Create.cshtml" />
+    <Content Include="Views\thoigianhocs\Delete.cshtml" />
+    <Content Include="Views\thoigianhocs\Details.cshtml" />
+    <Content Include="Views\thoigianhocs\Edit.cshtml" />
+    <Content Include="Views\thoigianhocs\Index.cshtml" />
+    <Content Include="Views\lopmonhocs\Create.cshtml" />
+    <Content Include="Views\lopmonhocs\Delete.cshtml" />
+    <Content Include="Views\lopmonhocs\Details.cshtml" />
+    <Content Include="Views\lopmonhocs\Edit.cshtml" />
+    <Content Include="Views\lopmonhocs\Index.cshtml" />
+    <Content Include="Views\lophocphans\Create.cshtml" />
+    <Content Include="Views\lophocphans\Delete.cshtml" />
+    <Content Include="Views\lophocphans\Details.cshtml" />
+    <Content Include="Views\lophocphans\Edit.cshtml" />
+    <Content Include="Views\lophocphans\Index.cshtml" />
+    <Content Include="Views\Diems\Create.cshtml" />
+    <Content Include="Views\Diems\Delete.cshtml" />
+    <Content Include="Views\Diems\Details.cshtml" />
+    <Content Include="Views\Diems\Edit.cshtml" />
+    <Content Include="Views\Diems\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

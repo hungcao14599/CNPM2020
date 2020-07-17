@@ -1,0 +1,44 @@
+﻿@model IEnumerable<V1_BTL_CNPM.Models.Diem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4>Thông tin điểm sinh viên theo môn</h4>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+@RenderPage("../Shared/toptable.cshtml")
+<tr>
+
+    <th rowspan="1" colspan="1">Mã sinh viên</th>
+
+    <th rowspan="1" colspan="1">Tên môn</th>
+
+    <th rowspan="1" colspan="1">Điểm sinh viên</th>
+
+    <th rowspan="1" colspan="1">Chức năng</th>
+</tr>
+
+@foreach (var item in Model)
+{
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaSV)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.mon.TenMon)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Diem1)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Diem1 }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Diem1 }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Diem1 })
+    </td>
+</tr>
+}
+
+@RenderPage("../Shared/bottomtable.cshtml")
