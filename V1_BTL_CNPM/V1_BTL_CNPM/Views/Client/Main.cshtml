@@ -3,9 +3,6 @@
     Layout = null;
 }
 
-@{
-    Layout = null;
-}
 <!DOCTYPE html>
 <html>
 
@@ -13,96 +10,206 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Tra Cứu Thông Tin Sinh Viên</title>
-    <link rel="stylesheet" href="../../asset/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-    <link rel="stylesheet" href="../../asset/css/user.css">
+    <link rel="stylesheet" href="../../asset/client/user/css/user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="../../asset/client/user/img/mango.ico" />
+
 </head>
 
 <body>
-    <header style="background-image: url('../../asset/img/Artboard1.png');">
-        <nav class="navbar navbar-default">
+    <header style="background-image: url('../../asset/client/user/img/cambridgeguide.jpg');">
+        <nav class="navbar navbar-default" style=" border-color: none; ">
             <div class="container">
                 <div class="navbar-header"><a class="navbar-brand" href="#"><i class="glyphicon glyphicon-book"></i><span class="text-title">Hệ Thống Tra Cứu <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Thông Tin Sinh Viên</span></a><button data-toggle="collapse" class="navbar-toggle collapsed" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li role="presentation"><a href="LoginUser">Login</a></li>
-                        <li role="presentation"><a href="#">Info</a></li>
+                        <li role="presentation"><a href="Main">Home </a></li>
+                        <li role="presentation"><a href="LoginUser">Login </a></li>
                         <li role="presentation"><a href="#">About</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <ul class="nav nav-pills categories">
-        <li><a href="#">Landscape </a></li>
-        <li><a href="#">Macro </a></li>
-        <li><a href="#">Portraits </a></li>
-        <li><a href="#">Locations </a></li>
-        <li><a href="#">Techniques </a></li>
-    </ul>
-    <!--<div class=" ">
 
-        <div class="row">
-            <div class="col-md-1 "></div>
-            <div class="col-md-2 ">
-                <div>
-                    <img src="../../asset/img/mango.png" alt="Image" width="200px" ;height="200 px" />
+
+
+
+    <div class="row" style="padding-top: 5px;">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+            <hr>
+            <h3>Sự Kiện</h3>
+            <hr>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="../../asset/client/user/imgs/bg-slider-1.jpg" alt="#">
+                    </div>
+
+                    <div class="item">
+                        <img src="../../asset/client/user/imgs/bg-slider-2.jpg" alt="#">
+                    </div>
+
+                    <div class="item">
+                        <img src="../../asset/client/user/imgs/bg-slider-3.jpg" alt="#">
+                    </div>
+
                 </div>
-                <div>
-                    <h1>Nguyễn Văn A</h1>
-                    <p class="author"><strong>John Steward</strong> <span class="text-muted">October 6th 2015 </span></p>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <hr>
+            <h3>Tin Tức</h3>
+            <hr>
+            <article class="hentry wow fadeInUpSmall" data-wow-delay="0s">
+                <div class="article-left">
+                    <a href=""><img src="../../asset/client/user/imgs/blog/blog1-600x470.jpg" alt="Image"></a>
+                </div><!-- .post-media -->
+                <div class="article-right">
+                    <h3><a href="#">Officers Fired After Removal of United Airlines Passenger</a></h3>
+                    <div class="post-meta style-1">
+                        <div class="post-meta-content">
+                            <span class="post-date item">
+                                <span class="inner"><span class="entry-date">October 3, 2017</span></span>
+                            </span>
+                            <span class="post-by-author item"><span class="inner">By <a href="#" rel="author">Sabrina Mcdoe</a></span></span>
+                        </div>
+                    </div><!-- .post-meta -->
+
+                    <div class="description">
+                        <p>By the same illusion which lifts the horizon of the sea to the level of the the sable cloud beneath was dished out and the car seemed to float in the middle of an dme…</p>
+                    </div><!-- .post-content -->
+
+                    <div class="post-read-more">
+                        <div class="post-link">
+                            <a href="#" title="READ MORE">READ MORE</a>
+                        </div><!-- .post-link -->
+                    </div>
+                </div><!-- .post-content-wrap -->
+            </article><!-- .hentry -->
+        </div>
+        <div class="col-md-4 col-md-offset-0" style="margin-top: 108px">
+
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdaihocthuyloi1959%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="700" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <!-- footer -->
+    <footer class="footer-page">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-left">
+                        <h5><span id="copyright">©CNPM 2020 Trường Đại Học Thủy Lợi</span></h5>
+                    </div>
+                    <div class="col-md-6  text-right" style="padding-right: 10px;">
+                        <a href="https://www.facebook.com/daihocthuyloi1959/?fref=ts">
+                            <i class="fab fa-facebook"
+                               id="fb-facebook"></i>
+                        </a>
+                        <a href="https://www.youtube.com/user/daihocthuyloi">
+                            <i class="fab fa-youtube"
+                               id="fb-youtube"></i>
+                        </a>
+                        <a href="https://twitter.com/Daihocthuyloihn"><i class="fab fa-twitter" id="fb-twitter"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-8 col-md-offset-0 ">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Email</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Default</td>
-                <td>Defaultson</td>
-                <td>def@somemail.com</td>
-            </tr>
-            <tr class="success">
-                <td>Success</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
-            </tr>
-            <tr class="danger">
-                <td>Danger</td>
-                <td>Moe</td>
-                <td>mary@example.com</td>
-            </tr>
-            <tr class="info">
-                <td>Info</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-            </tr>
-            <tr class="warning">
-                <td>Warning</td>
-                <td>Refs</td>
-                <td>bo@example.com</td>
-            </tr>
-            <tr class="active">
-                <td>Active</td>
-                <td>Activeson</td>
-                <td>act@example.com</td>
-            </tr>
-        </tbody>
-    </table>-->
-    <div class="col-md-1 "></div>
-    </div>
-    </div>
-    <footer>
-        <h5>Photography Blog © 2016</h5>
+        </div><!-- /.footer-top -->
+        <div class="footer-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6369699675015!2d105.82259111445427!3d21.007184493891458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac81a053338d%3A0x6ab48b590e023d51!2zxJBhzKNpIEhvzKNjIFRodcyJeSBMxqHMo2k!5e0!3m2!1svi!2s!4v1594998081559!5m2!1svi!2s" width="275" height="275" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="address">
+                                    TRƯỜNG ĐẠI HỌC THỦY LỢI<br>
+                                    <i class="fas fa-map-marker-alt"></i> Địa chỉ: 175 Tây Sơn, Đống Đa, Hà Nội<br>
+                                    <i class="fas fa-phone"></i> Điện thoại: (024) 38522201 - Fax: (024) 35633351<br>
+                                    <i class="fas fa-envelope"></i> Email: <a href="#">phonghcth@tlu.edu.vn</a>
+                                </div>
+
+                                <hr>
+                                <div class="address">
+                                    PHÂN HIỆU ĐẠI HỌC THỦY LỢI<br>
+                                    <i class="fas fa-map-marker-alt"></i> Địa chỉ 1: Số 2 Trường Sa, P.17, Q.Bình Thạnh,
+                                    Tp.Hồ Chí Minh
+                                </div>
+
+                                <div class="address">
+                                    <i class="fas fa-phone"></i> Điện thoại: (028) 38400532 - Fax:
+                                    (028) 38400542
+                                </div>
+
+                                <div class="address">
+                                    <i class="fas fa-map-marker-alt"></i> Địa chỉ 2: Phường An Thạnh,
+                                    TP&nbsp;Thuận An, Tỉnh Bình Dương<br>
+                                    <i class="fas fa-phone"></i> Điện thoại: (065) 3748620 -&nbsp;Fax: (065) 3833489<br>
+                                    <i class="fas fa-envelope"></i> Email: <a href="#">cs2@tlu.edu.vn</a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="address">
+                                    CƠ SỞ PHỐ HIẾN<br>
+                                    <i class="fas fa-map-marker-alt"></i> Địa chỉ: Quốc lộ 38B Nhật Tân, Tiên Lữ, Hưng
+                                    Yên<br>
+                                    <i class="fas fa-phone"></i> Điện thoại: (0221) 3883885
+                                </div>
+
+                                <div class="address">
+                                    <i class="fas fa-envelope"></i> Email: Bandtctsvphohien@tlu.edu.vn
+                                </div>
+
+                                <hr>
+                                <div class="address">
+                                    VIỆN ĐÀO TẠO VÀ KHOA HỌC ỨNG DỤNG MIỀN TRUNG<br>
+                                    <i class="fas fa-map-marker-alt"></i> Địa chỉ: Số 115 Trần Phú, Thành phố&nbsp;Phan
+                                    Rang, Tỉnh Ninh Thuận<br>
+                                    <i class="fas fa-phone"></i> Điện thoại: (0259) 3823027, (0259) 3823028<br>
+                                    <i class="fas fa-envelope"></i> Email: <a href="#"> trungtamdh2@tlu.edu.vn</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div><!-- /.footer-middle -->
     </footer>
-    <script src="../../asset/js/jquery.min.js"></script>
-    <script src="../../asset/bootstrap/js/bootstrap.min.js"></script>
+    <!-- footer -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0" nonce="Tav18k03"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 
 </html>
