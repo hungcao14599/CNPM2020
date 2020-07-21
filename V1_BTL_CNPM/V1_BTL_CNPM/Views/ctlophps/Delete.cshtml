@@ -1,0 +1,39 @@
+﻿@model V1_BTL_CNPM.Models.ctlophp
+
+@{
+    ViewBag.Title = "Delete";
+}
+<h4>Xóa thông tin lớp học phần</h4>
+<hr />
+<h5 style="color:red">Bạn có muốn xóa lớp học phần này không ?</h5>
+<div>
+    <dl class="dl-horizontal">
+        <dd>
+            <b>Mã lớp học phần</b>: @Html.DisplayFor(model => model.MaLHP)
+        </dd>
+
+        <dd>
+            <b>Tên lớp học phần</b>: @Html.DisplayFor(model => model.lophocphan.TenLopHP)
+        </dd>
+
+        <dd>
+            <b>Mã thời gian học</b>: @Html.DisplayFor(model => model.lophocphan.MaTGH)
+        </dd>
+
+        <dd>
+            <b>Mã lớp theo môn học</b>: @Html.DisplayFor(model => model.lopmonhoc.MaLTM)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+
+        </div>
+    }
+    <div>@Html.ActionLink("Trở lại danh sách", "Index")</div>
+</div>

@@ -1,0 +1,47 @@
+﻿@model V1_BTL_CNPM.Models.gv_mon
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h4>Xóa thông tin môn học</h4>
+<hr />
+<h5 style="color:red">Bạn có muốn xóa môn học này không ?</h5>
+<div>
+    <dl class="dl-horizontal">
+        <dd>
+            <b>Mã giảng viên</b>: @Html.DisplayFor(model => model.giangvien.MaGV)
+        </dd>
+
+        <dd>
+            <b>Tên giảng viên</b>: @Html.DisplayFor(model => model.giangvien.HoTenGV)
+        </dd>
+
+
+        <dd>
+            <b>Mã môn học</b>: @Html.DisplayFor(model => model.mon.MaMon)
+        </dd>
+
+        <dd>
+            <b>Tên môn học</b>: @Html.DisplayFor(model => model.mon.TenMon)
+        </dd>
+
+
+
+        <dd>
+            <b>Mã ngành học</b>: @Html.DisplayFor(model => model.mon.MaNganh)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa bản ghi" class="btn btn-success" /> |
+            
+        </div>
+    }
+<div>@Html.ActionLink("Trở lại danh sách", "Index")</div>
+</div>

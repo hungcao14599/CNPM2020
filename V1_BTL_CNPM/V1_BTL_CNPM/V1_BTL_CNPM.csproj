@@ -131,8 +131,10 @@
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\admin\BaseController.cs" />
+    <Compile Include="Controllers\admin\ctlophpsController.cs" />
     <Compile Include="Controllers\admin\DiemsController.cs" />
     <Compile Include="Controllers\admin\giangviensController.cs" />
+    <Compile Include="Controllers\admin\gv_monController.cs" />
     <Compile Include="Controllers\admin\lophocphansController.cs" />
     <Compile Include="Controllers\admin\lopmonhocsController.cs" />
     <Compile Include="Controllers\admin\MainAdminController.cs" />
@@ -141,6 +143,7 @@
     <Compile Include="Controllers\admin\qlsvController.cs" />
     <Compile Include="Controllers\admin\QLTaiKhoanController.cs" />
     <Compile Include="Controllers\admin\sinhviensController.cs" />
+    <Compile Include="Controllers\admin\taikhoansController.cs" />
     <Compile Include="Controllers\admin\thoigianhocsController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -150,10 +153,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ctlophp.cs">
+      <DependentUpon>QLSinhVien.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Diem.cs">
       <DependentUpon>QLSinhVien.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\giangvien.cs">
+      <DependentUpon>QLSinhVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gv_mon.cs">
       <DependentUpon>QLSinhVien.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\kehoachgiangday.cs">
@@ -2348,13 +2357,6 @@
     <Content Include="asset\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="asset\client\css\login1.map" />
     <Content Include="asset\client\scss\login.scss" />
-    <EntityDeploy Include="Models\QLSinhVien.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLSinhVien.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\QLSinhVien.edmx.diagram">
-      <DependentUpon>QLSinhVien.edmx</DependentUpon>
-    </Content>
     <Content Include="asset\client\user\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="asset\client\user\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="asset\client\user\bootstrap\fonts\glyphicons-halflings-regular.woff" />
@@ -2370,6 +2372,13 @@
     <Content Include="asset\client\user\fonts\themecore.eot" />
     <Content Include="asset\client\user\fonts\themecore.ttf" />
     <Content Include="asset\client\user\fonts\themecore.woff" />
+    <EntityDeploy Include="Models\QLSinhVien.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLSinhVien.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QLSinhVien.edmx.diagram">
+      <DependentUpon>QLSinhVien.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2432,7 +2441,6 @@
     <Content Include="Views\sinhviens\Details.cshtml" />
     <Content Include="Views\sinhviens\Edit.cshtml" />
     <Content Include="Views\sinhviens\Index.cshtml" />
-    <Content Include="Views\QLTaiKhoan\Edit_dssv.cshtml" />
     <Content Include="Views\giangviens\Create.cshtml" />
     <Content Include="Views\giangviens\Delete.cshtml" />
     <Content Include="Views\giangviens\Details.cshtml" />
@@ -2458,6 +2466,21 @@
     <Content Include="Views\Diems\Details.cshtml" />
     <Content Include="Views\Diems\Edit.cshtml" />
     <Content Include="Views\Diems\Index.cshtml" />
+    <Content Include="Views\taikhoans\Create.cshtml" />
+    <Content Include="Views\taikhoans\Delete.cshtml" />
+    <Content Include="Views\taikhoans\Details.cshtml" />
+    <Content Include="Views\taikhoans\Edit.cshtml" />
+    <Content Include="Views\taikhoans\Index.cshtml" />
+    <Content Include="Views\gv_mon\Create.cshtml" />
+    <Content Include="Views\gv_mon\Delete.cshtml" />
+    <Content Include="Views\gv_mon\Details.cshtml" />
+    <Content Include="Views\gv_mon\Edit.cshtml" />
+    <Content Include="Views\gv_mon\Index.cshtml" />
+    <Content Include="Views\ctlophps\Create.cshtml" />
+    <Content Include="Views\ctlophps\Delete.cshtml" />
+    <Content Include="Views\ctlophps\Details.cshtml" />
+    <Content Include="Views\ctlophps\Edit.cshtml" />
+    <Content Include="Views\ctlophps\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -17,15 +17,18 @@ namespace V1_BTL_CNPM.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public lopmonhoc()
         {
-            this.lophocphans = new HashSet<lophocphan>();
+            this.ctlophps = new HashSet<ctlophp>();
+            this.ctlophps1 = new HashSet<ctlophp>();
         }
     
         public string MaLTM { get; set; }
         public string TenLopMon { get; set; }
         public string MaMon { get; set; }
     
-        public virtual mon mon { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<lophocphan> lophocphans { get; set; }
+        public virtual ICollection<ctlophp> ctlophps { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ctlophp> ctlophps1 { get; set; }
+        public virtual mon mon { get; set; }
     }
 }

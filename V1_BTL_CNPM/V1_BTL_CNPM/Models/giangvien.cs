@@ -17,9 +17,10 @@ namespace V1_BTL_CNPM.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public giangvien()
         {
+            this.gv_mon = new HashSet<gv_mon>();
             this.kehoachgiangdays = new HashSet<kehoachgiangday>();
             this.lichtrinhthuctes = new HashSet<lichtrinhthucte>();
-            this.mons = new HashSet<mon>();
+            this.gv_mon1 = new HashSet<gv_mon>();
         }
     
         public string MaGV { get; set; }
@@ -37,10 +38,12 @@ namespace V1_BTL_CNPM.Models
         public virtual khoa khoa { get; set; }
         public virtual taikhoan taikhoan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<gv_mon> gv_mon { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<kehoachgiangday> kehoachgiangdays { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<lichtrinhthucte> lichtrinhthuctes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<mon> mons { get; set; }
+        public virtual ICollection<gv_mon> gv_mon1 { get; set; }
     }
 }

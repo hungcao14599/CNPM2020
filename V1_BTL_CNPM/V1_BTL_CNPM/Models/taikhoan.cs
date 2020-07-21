@@ -23,7 +23,7 @@ namespace V1_BTL_CNPM.Models
     
         public string TenTaiKhoan { get; set; }
         public string MatKhau { get; set; }
-        public int Quyen { get; set; }
+        public Nullable<int> Quyen { get; set; }
         public Nullable<System.DateTime> NgayTao { get; set; }
         public int MaTK { get; set; }
     

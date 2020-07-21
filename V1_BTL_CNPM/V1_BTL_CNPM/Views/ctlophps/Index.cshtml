@@ -1,0 +1,49 @@
+﻿@model IEnumerable<V1_BTL_CNPM.Models.ctlophp>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4>Thông tin lớp học phần</h4>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+@RenderPage("../Shared/toptable.cshtml")
+<tr>
+
+    <th rowspan="1" colspan="1">Mã lớp học phần</th>
+
+    <th rowspan="1" colspan="1">Tên lớp học phần</th>
+
+    <th rowspan="1" colspan="1">Mã thời gian học</th>
+
+    <th rowspan="1" colspan="1">Mã lớp theo môn học</th>
+
+    <th rowspan="1" colspan="1">Chức năng</th>
+</tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.lophocphan.TenLopHP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lopmonhoc.TenLopMon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lophocphan1.TenLopHP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lopmonhoc1.TenLopMon)
+        </td>
+        <td>
+            @Html.ActionLink("Cập nhật", "Edit", new {id=item.MaLHP}) |
+            @Html.ActionLink("Chi tiết", "Details", new { id = item.MaLHP }) |
+            @Html.ActionLink("Xóa", "Delete", new { id = item.MaLHP })
+        </td>
+    </tr>
+}
+
+@RenderPage("../Shared/bottomtable.cshtml")

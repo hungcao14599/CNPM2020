@@ -13,10 +13,10 @@ namespace V1_BTL_CNPM.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class db_cnpm_v2Entities : DbContext
+    public partial class db_cnpm_v3Entities : DbContext
     {
-        public db_cnpm_v2Entities()
-            : base("name=db_cnpm_v2Entities")
+        public db_cnpm_v3Entities()
+            : base("name=db_cnpm_v3Entities")
         {
         }
     
@@ -25,8 +25,10 @@ namespace V1_BTL_CNPM.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<ctlophp> ctlophps { get; set; }
         public virtual DbSet<Diem> Diems { get; set; }
         public virtual DbSet<giangvien> giangviens { get; set; }
+        public virtual DbSet<gv_mon> gv_mon { get; set; }
         public virtual DbSet<kehoachgiangday> kehoachgiangdays { get; set; }
         public virtual DbSet<khoa> khoas { get; set; }
         public virtual DbSet<lichtrinhthucte> lichtrinhthuctes { get; set; }

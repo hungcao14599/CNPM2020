@@ -50,7 +50,7 @@
                                     <span class="login100-form-title p-b-24" style="font-size: 24px;">
                                         HỆ THỐNG ĐĂNG NHẬP
                                     </span>
-                                    <span class="login100-form-title p-b-48" >
+                                    <span class="login100-form-title p-b-48">
                                         <i class="fa fa-user" style="font-size: 50px;"></i>
                                     </span>
 
@@ -58,7 +58,7 @@
                                     <div class="wrap-input100 validate-input form-group">
 
                                         @Html.TextBoxFor(m => m.TenTaiKhoan, new { @placeholder = "Tên đăng nhập", @type = "text", @class = "input100", @autofocus = "autofocus" })
-                                        @Html.ValidationMessageFor(model => model.TenTaiKhoan, "", new { @class = "text-danger" })
+
 
                                     </div>
 
@@ -71,18 +71,18 @@
 
 
                                         @Html.PasswordFor(m => m.MatKhau, new { @placeholder = "***********", @type = "password", @class = "input100", @autofocus = "autofocus" })
-                                        @Html.ValidationMessageFor(x => x.MatKhau, "", new { @class = "text-danger" })
+                                       
 
                                     </div>
-
+                                    @Html.ValidationMessageFor(x => x.MatKhau, "", new { @class = "text-danger", @style = "color: red; font-size: 14px" })
 
 
                                     @*
-                                        <div class="form-check">
+        <div class="form-check">
 
-                                            @Html.CheckBoxFor(x => x.CheckBox) Lưu mật khẩu
+            @Html.CheckBoxFor(x => x.CheckBox) Lưu mật khẩu
 
-                                        </div>
+        </div>
                                     *@
                                     <div class="container-login100-form-btn">
                                         <div class="wrap-login100-form-btn">

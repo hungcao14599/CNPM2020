@@ -10,9 +10,9 @@ using V1_BTL_CNPM.Models;
 
 namespace V1_BTL_CNPM.Controllers.admin
 {
-    public class lopmonhocsController : Controller
+    public class lopmonhocsController : BaseController
     {
-        private db_cnpm_v2Entities db = new db_cnpm_v2Entities();
+        private db_cnpm_v3Entities db = new db_cnpm_v3Entities();
 
         // GET: lopmonhocs
         public ActionResult Index()

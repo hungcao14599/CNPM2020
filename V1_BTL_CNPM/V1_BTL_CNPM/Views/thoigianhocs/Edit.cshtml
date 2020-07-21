@@ -4,18 +4,27 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>thoigianhoc</h4>
+    <div class="form-horizontal col-md-6">
+        <h4>Cập nhật thông tin thời gian học</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
         <div class="form-group">
-            @Html.LabelFor(model => model.NamHoc, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.MaTGH, "Mã thời gian học", htmlAttributes: new { @class = "control-label col-md-6" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MaTGH, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.MaTGH, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.NamHoc, "Năm học", htmlAttributes: new { @class = "control-label col-md-6" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NamHoc, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NamHoc, "", new { @class = "text-danger" })
@@ -23,7 +32,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.HocKy, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.HocKy, "Học kỳ", htmlAttributes: new { @class = "control-label col-md-6" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.HocKy, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.HocKy, "", new { @class = "text-danger" })
@@ -31,23 +40,23 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.GiaiDoan, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.GiaiDoan, "Giai đoạn", htmlAttributes: new { @class = "control-label col-md-6" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.GiaiDoan, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.GiaiDoan, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        @Html.HiddenFor(model => model.MaTGH)
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Cập nhật" class="btn btn-success" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Trở lại danh sách", "Index")
 </div>

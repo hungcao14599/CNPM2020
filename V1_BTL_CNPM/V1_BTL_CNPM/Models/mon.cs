@@ -18,8 +18,9 @@ namespace V1_BTL_CNPM.Models
         public mon()
         {
             this.Diems = new HashSet<Diem>();
+            this.gv_mon = new HashSet<gv_mon>();
+            this.gv_mon1 = new HashSet<gv_mon>();
             this.lopmonhocs = new HashSet<lopmonhoc>();
-            this.giangviens = new HashSet<giangvien>();
         }
     
         public string MaMon { get; set; }
@@ -29,9 +30,11 @@ namespace V1_BTL_CNPM.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Diem> Diems { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<gv_mon> gv_mon { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<gv_mon> gv_mon1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<lopmonhoc> lopmonhocs { get; set; }
         public virtual nganh nganh { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<giangvien> giangviens { get; set; }
     }
 }

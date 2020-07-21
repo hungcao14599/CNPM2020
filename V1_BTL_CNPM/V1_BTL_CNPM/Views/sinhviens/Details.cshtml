@@ -4,95 +4,64 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
 <div>
-    <h4>sinhvien</h4>
+    <h4>Thông tin chi tiết sinh viên</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TenSV)
-        </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TenSV)
+            <b>Mã sinh viên</b>: @Html.DisplayFor(model => model.MaSV)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NgaySinh)
-        </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NgaySinh)
+            <b>Tên sinh viên</b>: @Html.DisplayFor(model => model.TenSV)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.GioiTinh)
-        </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.GioiTinh)
+            <b>Khoa</b>: @Html.DisplayFor(model => model.khoa.TenKhoa)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.QueQuan)
-        </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.QueQuan)
+            <b>Ngày sinh</b>: @Html.DisplayFor(model => model.NgaySinh)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SoDienThoai)
-        </dt>
+
 
         <dd>
-            @Html.DisplayFor(model => model.SoDienThoai)
+            <b>Giới tính</b>: @Html.DisplayFor(model => model.GioiTinh)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+
 
         <dd>
-            @Html.DisplayFor(model => model.Email)
+            <b>Quê quán</b>: @Html.DisplayFor(model => model.QueQuan)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DiaChi)
-        </dt>
+       
+        <dd>
+            <b>Số điện thoại</b>: @Html.DisplayFor(model => model.SoDienThoai)
+        </dd>
+
+
 
         <dd>
-            @Html.DisplayFor(model => model.DiaChi)
+            <b>Email</b>: @Html.DisplayFor(model => model.Email)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HinhAnh)
-        </dt>
+
+
 
         <dd>
-            @Html.DisplayFor(model => model.HinhAnh)
+            <b>Hình ảnh</b>: @Html.DisplayFor(model => model.HinhAnh)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.khoa.TenKhoa)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.khoa.TenKhoa)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.taikhoan.TenTaiKhoan)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.taikhoan.TenTaiKhoan)
-        </dd>
 
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.MaSV }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Trở lại danh sách", "Index")
 </p>

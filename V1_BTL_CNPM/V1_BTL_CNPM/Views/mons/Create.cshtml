@@ -8,15 +8,15 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
+    <div class="form-horizontal col-md-6">
         <h4>Tạo môn học</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="panel panel-default" style="width:600px">
+        <div class="panel panel-default">
 
             <div class="form-group">
-                @Html.LabelFor(model => model.MaMon, "Mã môn", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.MaMon, "Mã môn", htmlAttributes: new { @class = "control-label col-md-6" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.MaMon, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.MaMon, "", new { @class = "text-danger" })
@@ -24,7 +24,7 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.TenMon, "Tên môn", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.TenMon, "Tên môn", htmlAttributes: new { @class = "control-label col-md-6" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.TenMon, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.TenMon, "", new { @class = "text-danger" })
@@ -32,7 +32,7 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.MaNganh, "Tên ngành", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.MaNganh, "Tên ngành", htmlAttributes: new { @class = "control-label col-md-6" })
                 <div class="col-md-10">
                     @Html.DropDownList("MaNganh", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.MaNganh, "", new { @class = "text-danger" })

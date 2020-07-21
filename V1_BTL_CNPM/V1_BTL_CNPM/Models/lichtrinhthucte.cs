@@ -17,7 +17,8 @@ namespace V1_BTL_CNPM.Models
         public string MaLTTT { get; set; }
         public string BaiHocTT { get; set; }
         public string DiaDiemTT { get; set; }
-        public Nullable<System.DateTime> ThoiGianTT { get; set; }
+        public Nullable<System.DateTime> ThoiGianTTBD { get; set; }
+        public Nullable<System.DateTime> ThoiGianTTKT { get; set; }
         public string MaGV { get; set; }
     
         public virtual giangvien giangvien { get; set; }

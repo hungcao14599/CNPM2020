@@ -1,0 +1,32 @@
+﻿@model V1_BTL_CNPM.Models.ctlophp
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <h4>Thông tin chi tiết lớp học phần</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dd>
+            <b>Mã lớp học phần</b>: @Html.DisplayFor(model => model.MaLHP)
+        </dd>
+
+        <dd>
+            <b>Tên lớp học phần</b>: @Html.DisplayFor(model => model.lophocphan.TenLopHP)
+        </dd>
+
+        <dd>
+            <b>Mã thời gian học</b>: @Html.DisplayFor(model => model.lophocphan.MaTGH)
+        </dd>
+
+        <dd>
+            <b>Mã lớp theo môn học</b>: @Html.DisplayFor(model => model.lopmonhoc.MaLTM)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Cập nhật", "Edit", new { id = Model.MaLHP }) |
+    @Html.ActionLink("Trở lại danh sách", "Index")
+</p>

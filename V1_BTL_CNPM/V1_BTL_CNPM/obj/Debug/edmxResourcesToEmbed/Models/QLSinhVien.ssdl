@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="db_cnpm_v2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="db_cnpm_v3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="ctlophp">
     <Key>
       <PropertyRef Name="MaLTM" />
@@ -47,7 +47,8 @@
     <Property Name="MaKHGD" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="BaiHocDK" Type="varchar" MaxLength="50" />
     <Property Name="DiaDiemDK" Type="varchar" MaxLength="30" />
-    <Property Name="ThoiGianDK" Type="date" />
+    <Property Name="ThoiGianDKBD" Type="date" />
+    <Property Name="ThoiGianDKKT" Type="date" />
     <Property Name="MaGV" Type="varchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="khoa">
@@ -64,7 +65,8 @@
     <Property Name="MaLTTT" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="BaiHocTT" Type="varchar" MaxLength="50" />
     <Property Name="DiaDiemTT" Type="varchar" MaxLength="30" />
-    <Property Name="ThoiGianTT" Type="date" />
+    <Property Name="ThoiGianTTBD" Type="date" />
+    <Property Name="ThoiGianTTKT" Type="date" />
     <Property Name="MaGV" Type="varchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="lophocphan">
@@ -206,7 +208,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__gv_mon__MaGV__3A81B327">
+  <Association Name="FK__gv_mon__MaGV__3F466844">
     <End Role="giangvien" Type="Self.giangvien" Multiplicity="1" />
     <End Role="gv_mon" Type="Self.gv_mon" Multiplicity="*" />
     <ReferentialConstraint>
@@ -218,7 +220,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__gv_mon__MaMon__3B75D760">
+  <Association Name="FK__gv_mon__MaMon__403A8C7D">
     <End Role="mon" Type="Self.mon" Multiplicity="1" />
     <End Role="gv_mon" Type="Self.gv_mon" Multiplicity="*" />
     <ReferentialConstraint>
@@ -230,7 +232,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__kehoachgia__MaGV__37A5467C">
+  <Association Name="FK__kehoachgia__MaGV__398D8EEE">
     <End Role="giangvien" Type="Self.giangvien" Multiplicity="0..1" />
     <End Role="kehoachgiangday" Type="Self.kehoachgiangday" Multiplicity="*" />
     <ReferentialConstraint>
@@ -242,7 +244,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__lichtrinht__MaGV__34C8D9D1">
+  <Association Name="FK__lichtrinht__MaGV__3C69FB99">
     <End Role="giangvien" Type="Self.giangvien" Multiplicity="0..1" />
     <End Role="lichtrinhthucte" Type="Self.lichtrinhthucte" Multiplicity="*" />
     <ReferentialConstraint>
@@ -254,7 +256,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__lophocpha__MaTGH__403A8C7D">
+  <Association Name="FK__lophocpha__MaTGH__36B12243">
     <End Role="thoigianhoc" Type="Self.thoigianhoc" Multiplicity="0..1" />
     <End Role="lophocphan" Type="Self.lophocphan" Multiplicity="*" />
     <ReferentialConstraint>
@@ -326,7 +328,55 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="db_cnpm_v2ModelStoreContainer">
+  <Association Name="fk_htk_gv">
+    <End Role="giangvien" Type="Self.giangvien" Multiplicity="1" />
+    <End Role="gv_mon" Type="Self.gv_mon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="giangvien">
+        <PropertyRef Name="MaGV" />
+      </Principal>
+      <Dependent Role="gv_mon">
+        <PropertyRef Name="MaGV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_htk_lhp">
+    <End Role="lophocphan" Type="Self.lophocphan" Multiplicity="1" />
+    <End Role="ctlophp" Type="Self.ctlophp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lophocphan">
+        <PropertyRef Name="MaLHP" />
+      </Principal>
+      <Dependent Role="ctlophp">
+        <PropertyRef Name="MaLHP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_htk_ltm">
+    <End Role="lopmonhoc" Type="Self.lopmonhoc" Multiplicity="1" />
+    <End Role="ctlophp" Type="Self.ctlophp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lopmonhoc">
+        <PropertyRef Name="MaLTM" />
+      </Principal>
+      <Dependent Role="ctlophp">
+        <PropertyRef Name="MaLTM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_htk_mon">
+    <End Role="mon" Type="Self.mon" Multiplicity="1" />
+    <End Role="gv_mon" Type="Self.gv_mon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mon">
+        <PropertyRef Name="MaMon" />
+      </Principal>
+      <Dependent Role="gv_mon">
+        <PropertyRef Name="MaMon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="db_cnpm_v3ModelStoreContainer">
     <EntitySet Name="ctlophp" EntityType="Self.ctlophp" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Diem" EntityType="Self.Diem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="giangvien" EntityType="Self.giangvien" Schema="dbo" store:Type="Tables" />
@@ -365,23 +415,23 @@
       <End Role="taikhoan" EntitySet="taikhoan" />
       <End Role="giangvien" EntitySet="giangvien" />
     </AssociationSet>
-    <AssociationSet Name="FK__gv_mon__MaGV__3A81B327" Association="Self.FK__gv_mon__MaGV__3A81B327">
+    <AssociationSet Name="FK__gv_mon__MaGV__3F466844" Association="Self.FK__gv_mon__MaGV__3F466844">
       <End Role="giangvien" EntitySet="giangvien" />
       <End Role="gv_mon" EntitySet="gv_mon" />
     </AssociationSet>
-    <AssociationSet Name="FK__gv_mon__MaMon__3B75D760" Association="Self.FK__gv_mon__MaMon__3B75D760">
+    <AssociationSet Name="FK__gv_mon__MaMon__403A8C7D" Association="Self.FK__gv_mon__MaMon__403A8C7D">
       <End Role="mon" EntitySet="mon" />
       <End Role="gv_mon" EntitySet="gv_mon" />
     </AssociationSet>
-    <AssociationSet Name="FK__kehoachgia__MaGV__37A5467C" Association="Self.FK__kehoachgia__MaGV__37A5467C">
+    <AssociationSet Name="FK__kehoachgia__MaGV__398D8EEE" Association="Self.FK__kehoachgia__MaGV__398D8EEE">
       <End Role="giangvien" EntitySet="giangvien" />
       <End Role="kehoachgiangday" EntitySet="kehoachgiangday" />
     </AssociationSet>
-    <AssociationSet Name="FK__lichtrinht__MaGV__34C8D9D1" Association="Self.FK__lichtrinht__MaGV__34C8D9D1">
+    <AssociationSet Name="FK__lichtrinht__MaGV__3C69FB99" Association="Self.FK__lichtrinht__MaGV__3C69FB99">
       <End Role="giangvien" EntitySet="giangvien" />
       <End Role="lichtrinhthucte" EntitySet="lichtrinhthucte" />
     </AssociationSet>
-    <AssociationSet Name="FK__lophocpha__MaTGH__403A8C7D" Association="Self.FK__lophocpha__MaTGH__403A8C7D">
+    <AssociationSet Name="FK__lophocpha__MaTGH__36B12243" Association="Self.FK__lophocpha__MaTGH__36B12243">
       <End Role="thoigianhoc" EntitySet="thoigianhoc" />
       <End Role="lophocphan" EntitySet="lophocphan" />
     </AssociationSet>
@@ -404,6 +454,22 @@
     <AssociationSet Name="FK__sinhvien__MaTK__46E78A0C" Association="Self.FK__sinhvien__MaTK__46E78A0C">
       <End Role="taikhoan" EntitySet="taikhoan" />
       <End Role="sinhvien" EntitySet="sinhvien" />
+    </AssociationSet>
+    <AssociationSet Name="fk_htk_gv" Association="Self.fk_htk_gv">
+      <End Role="giangvien" EntitySet="giangvien" />
+      <End Role="gv_mon" EntitySet="gv_mon" />
+    </AssociationSet>
+    <AssociationSet Name="fk_htk_lhp" Association="Self.fk_htk_lhp">
+      <End Role="lophocphan" EntitySet="lophocphan" />
+      <End Role="ctlophp" EntitySet="ctlophp" />
+    </AssociationSet>
+    <AssociationSet Name="fk_htk_ltm" Association="Self.fk_htk_ltm">
+      <End Role="lopmonhoc" EntitySet="lopmonhoc" />
+      <End Role="ctlophp" EntitySet="ctlophp" />
+    </AssociationSet>
+    <AssociationSet Name="fk_htk_mon" Association="Self.fk_htk_mon">
+      <End Role="mon" EntitySet="mon" />
+      <End Role="gv_mon" EntitySet="gv_mon" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

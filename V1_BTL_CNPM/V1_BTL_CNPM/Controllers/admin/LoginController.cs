@@ -9,7 +9,7 @@ namespace V1_BTL_CNPM.Controllers
     public class LoginController : Controller
     {
 
-        private db_cnpm_v2Entities db = new db_cnpm_v2Entities();
+        private db_cnpm_v3Entities db = new db_cnpm_v3Entities();
 
         // GET: Login
         public ActionResult Index()

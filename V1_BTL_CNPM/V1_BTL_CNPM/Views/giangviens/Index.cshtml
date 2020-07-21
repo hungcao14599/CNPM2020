@@ -9,14 +9,14 @@
 @RenderPage("../Shared/toptable.cshtml")
 <thead>
     <tr role="row">
-        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 58px;">Mã TK</th>
+        
 
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 68px;">Mã GV</th>
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Tên GV</th>
-        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Mã khoa</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 100px;">Mã khoa</th>
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Địa chỉ</th>
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">SĐT</th>
-        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Email</th>
+        
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Hình ảnh</th>
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Chức năng</th>
 
@@ -27,9 +27,7 @@
 @foreach (var item in Model)
 {
 <tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.MaTK)
-    </td>
+    
     <td>
         @Html.DisplayFor(modelItem => item.MaGV)
     </td>
@@ -43,21 +41,20 @@
     <td>
         @Html.DisplayFor(modelItem => item.DiaChi)
     </td>
+
     <td>
         @Html.DisplayFor(modelItem => item.SoDienThoai)
     </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Email)
-    </td>
+    
 
     <td>
         <img src="@Url.Content(item.HinhAnh)" width="100" height="100"/>
     </td>
 
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.MaGV }) |
-        @Html.ActionLink("Details", "Details", new { id = item.MaGV }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.MaGV })
+        @Html.ActionLink("Cập nhật", "Edit", new { id = item.MaGV }) |
+        @Html.ActionLink("Chi tiết", "Details", new { id = item.MaGV }) |
+        @Html.ActionLink("Xóa", "Delete", new { id = item.MaGV })
     </td>
 </tr>
 }

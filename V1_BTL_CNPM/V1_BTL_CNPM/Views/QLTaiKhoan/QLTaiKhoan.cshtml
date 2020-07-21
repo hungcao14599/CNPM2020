@@ -3,7 +3,7 @@
     ViewBag.Title = "QLTaiKhoan";
 }
 
-<h2>Quản lý tài khoản</h2>
+<h4>Quản lý tài khoản</h4>
 
 
 
@@ -19,8 +19,6 @@
 <tr>
     <th rowspan="1" colspan="1">Tài khoản</th>
 
-    <th rowspan="1" colspan="1">Mật khẩu</th>
-
     <th rowspan="1" colspan="1">Quyền truy cập</th>
 
     <th rowspan="1" colspan="1">Mã tài khoản</th>
@@ -35,10 +33,7 @@
         @Html.DisplayFor(modelItem => item.TenTaiKhoan)
     </td>
 
-    <td>
-        @Html.DisplayFor(modelItem => item.MatKhau)
-
-    </td>
+    
     <td>
         @Html.DisplayFor(modelItem => item.Quyen)
     </td>
@@ -48,9 +43,9 @@
     </td>
 
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.MaTK }) |
-        @Html.ActionLink("Details", "Details", new { id = item.MaTK }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.MaTK })
+        @Html.ActionLink("Cập nhật", "../taikhoans/Edit", new { id = item.MaTK }) |
+        @Html.ActionLink("Chi tiết", "../taikhoans/Details", new { id = item.MaTK }) |
+        @Html.ActionLink("Xóa", "../taikhoans/Delete", new { id = item.MaTK })
     </td>
 </tr>
 }

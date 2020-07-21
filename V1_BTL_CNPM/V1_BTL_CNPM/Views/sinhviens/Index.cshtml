@@ -11,11 +11,11 @@
 @RenderPage("../Shared/toptable.cshtml")
 <thead>
     <tr role="row">
-        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 58px;">Mã TK</th>
+        
 
-        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 68px;">Mã SV</th>
-        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Tên SV</th>
-        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Mã khoa</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 120px;">Mã sinh viên</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Tên sinh viên</th>
+        
         
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Địa chỉ</th>
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">SĐT</th>
@@ -29,18 +29,14 @@
 @foreach (var item in Model)
 {
 <tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.MaTK)
-    </td>
+    
     <td>
         @Html.DisplayFor(modelItem => item.MaSV)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.TenSV)
     </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.MaKhoa)
-    </td>
+    
  
     <td>
         @Html.DisplayFor(modelItem => item.DiaChi)
@@ -57,9 +53,9 @@
     </td>
 
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.MaSV }) |
-        @Html.ActionLink("Details", "Details", new { id = item.MaSV }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.MaSV })
+        @Html.ActionLink("Cập nhật", "Edit", new { id = item.MaSV }) |
+        @Html.ActionLink("Chi tiết", "Details", new { id = item.MaSV }) |
+        @Html.ActionLink("Xóa", "Delete", new { id = item.MaSV })
     </td>
 </tr>
 }

@@ -1,0 +1,42 @@
+﻿@model V1_BTL_CNPM.Models.taikhoan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <h4>Thông tin chi tiết tài khoản</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dd>
+            <b>Mã tài khoản</b>: @Html.DisplayFor(model => model.MaTK)
+
+        </dd>
+        <dd>
+            <b>Tài khoản</b>: @Html.DisplayFor(model => model.TenTaiKhoan)
+        </dd>
+
+
+        <dd>
+            <b>Mật khẩu</b>: @Html.DisplayFor(model => model.MatKhau)
+        </dd>
+
+        <dd>
+            <b>Quyền truy cập</b>: @Html.DisplayFor(model => model.Quyen)
+        </dd>
+
+
+
+        <dd>
+            <b>Ngày tạo</b>: @Html.DisplayFor(model => model.NgayTao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Cập nhật", "Edit", new { id = Model.MaTK }) |
+    
+        @Html.ActionLink("Trở lại danh sách", "../QLTaiKhoan/QLTaiKhoan")
+    
+</p>

@@ -15,7 +15,7 @@ namespace V1_BTL_CNPM.Controllers.admin
     {
         // GET: QLTaiKhoan
 
-        private db_cnpm_v2Entities db = new db_cnpm_v2Entities();
+        private db_cnpm_v3Entities db = new db_cnpm_v3Entities();
 
         public ActionResult QLTaiKhoan()
         {
@@ -73,18 +73,13 @@ namespace V1_BTL_CNPM.Controllers.admin
                     //To copy and save file into server.  
                     user.ImageFile.SaveAs(user.HinhAnh);*/
 
-
-
-                    
-
-
-
                     taikhoan tk = new taikhoan();
                         
                             tk.MaTK = user.MaTK;
                             tk.TenTaiKhoan = user.TenTaiKhoan;
                             tk.MatKhau = user.MatKhau;
                             tk.Quyen = user.Quyen;
+                            tk.NgayTao = user.NgayTao;
                             db.taikhoans.Add(tk);
                             db.SaveChanges();
                             if (tk.Quyen == 2)
