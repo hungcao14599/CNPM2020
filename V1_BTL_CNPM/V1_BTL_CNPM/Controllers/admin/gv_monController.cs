@@ -50,15 +50,32 @@ namespace V1_BTL_CNPM.Controllers.admin
         // POST: gv_mon/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
+        public bool CheckMaMon(string mamon)
+        {
+            return db.gv_mon.Count(x => x.MaMon == mamon) > 0;
+        }
+
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        
         public ActionResult Create([Bind(Include = "MaGV,MaMon")] gv_mon gv_mon)
         {
             if (ModelState.IsValid)
             {
-                db.gv_mon.Add(gv_mon);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (CheckMaMon(gv_mon.MaMon))
+                {
+                    Response.Write("<script>alert('Giảng viên đã giảng dạy môn này')</script>");
+                }
+                else
+                {
+                    db.gv_mon.Add(gv_mon);
+
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                    
+                
             }
 
             ViewBag.MaGV = new SelectList(db.giangviens, "MaGV", "HoTenGV", gv_mon.MaGV);

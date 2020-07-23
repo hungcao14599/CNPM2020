@@ -37,24 +37,38 @@ namespace V1_BTL_CNPM.Controllers.admin
         }
 
         // GET: lophocphans/Create
+
+
+        public bool CheckMaLHP(string malhp)
+        {
+            return db.lophocphans.Count(x => x.MaLHP == malhp) > 0;
+        }
+
+
         public ActionResult Create()
         {
             ViewBag.MaTGH = new SelectList(db.thoigianhocs, "MaTGH", "NamHoc");
             return View();
         }
 
-        // POST: lophocphans/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaLHP,TenLopHP,MaTGH")] lophocphan lophocphan)
         {
             if (ModelState.IsValid)
             {
-                db.lophocphans.Add(lophocphan);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (CheckMaLHP(lophocphan.MaLHP))
+                {
+                    Response.Write("<script>alert('Lớp học phần này đã tồn tại')</script>");
+                }
+                else
+                {
+                    db.lophocphans.Add(lophocphan);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                
             }
 
             ViewBag.MaTGH = new SelectList(db.thoigianhocs, "MaTGH", "NamHoc", lophocphan.MaTGH);

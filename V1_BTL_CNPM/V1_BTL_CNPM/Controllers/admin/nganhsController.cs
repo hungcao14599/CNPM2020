@@ -46,18 +46,28 @@ namespace V1_BTL_CNPM.Controllers
             return View();
         }
 
-        // POST: nganhs/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        public bool CheckMaNganh(string manganh)
+        {
+            return db.nganhs.Count(x => x.MaNganh == manganh) > 0;
+        }
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaNganh,TenNganh,MaKhoa")] nganh nganh)
+        //[ValidateAntiForgeryToken]
+        public ActionResult Create(nganh nganh)
         {
             if (ModelState.IsValid)
             {
-                db.nganhs.Add(nganh);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (CheckMaNganh(nganh.MaNganh))
+                {
+                    Response.Write("<script>alert('Ngành học này đã tồn tại')</script>");
+                }
+                else
+                {
+                    db.nganhs.Add(nganh);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                
             }
 
             ViewBag.MaKhoa = new SelectList(db.khoas, "MaKhoa", "TenKhoa", nganh.MaKhoa);

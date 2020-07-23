@@ -36,23 +36,36 @@ namespace V1_BTL_CNPM.Controllers.admin
         }
 
         // GET: thoigianhocs/Create
+
+        public bool CheckMaTGH(string mathoigian)
+        {
+            return db.thoigianhocs.Count(x => x.MaTGH == mathoigian) > 0;
+        }
+
+
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: thoigianhocs/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "NamHoc,HocKy,GiaiDoan,MaTGH")] thoigianhoc thoigianhoc)
+        
+        public ActionResult Create(thoigianhoc thoigianhoc)
         {
             if (ModelState.IsValid)
             {
-                db.thoigianhocs.Add(thoigianhoc);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (CheckMaTGH(thoigianhoc.MaTGH))
+                {
+                    Response.Write("<script>alert('Mã thời gian này đã tồn tại')</script>");
+                }
+                else
+                {
+                    db.thoigianhocs.Add(thoigianhoc);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                
             }
 
             return View(thoigianhoc);
@@ -77,7 +90,7 @@ namespace V1_BTL_CNPM.Controllers.admin
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "NamHoc,HocKy,GiaiDoan,MaTGH")] thoigianhoc thoigianhoc)
         {
             if (ModelState.IsValid)
@@ -106,7 +119,7 @@ namespace V1_BTL_CNPM.Controllers.admin
 
         // POST: thoigianhocs/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
             thoigianhoc thoigianhoc = db.thoigianhocs.Find(id);

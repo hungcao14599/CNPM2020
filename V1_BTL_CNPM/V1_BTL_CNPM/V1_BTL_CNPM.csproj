@@ -135,6 +135,8 @@
     <Compile Include="Controllers\admin\DiemsController.cs" />
     <Compile Include="Controllers\admin\giangviensController.cs" />
     <Compile Include="Controllers\admin\gv_monController.cs" />
+    <Compile Include="Controllers\admin\kehoachgiangdaysController.cs" />
+    <Compile Include="Controllers\admin\lichtrinhthuctesController.cs" />
     <Compile Include="Controllers\admin\lophocphansController.cs" />
     <Compile Include="Controllers\admin\lopmonhocsController.cs" />
     <Compile Include="Controllers\admin\MainAdminController.cs" />
@@ -2481,6 +2483,16 @@
     <Content Include="Views\ctlophps\Details.cshtml" />
     <Content Include="Views\ctlophps\Edit.cshtml" />
     <Content Include="Views\ctlophps\Index.cshtml" />
+    <Content Include="Views\kehoachgiangdays\Create.cshtml" />
+    <Content Include="Views\kehoachgiangdays\Delete.cshtml" />
+    <Content Include="Views\kehoachgiangdays\Details.cshtml" />
+    <Content Include="Views\kehoachgiangdays\Edit.cshtml" />
+    <Content Include="Views\kehoachgiangdays\Index.cshtml" />
+    <Content Include="Views\lichtrinhthuctes\Create.cshtml" />
+    <Content Include="Views\lichtrinhthuctes\Delete.cshtml" />
+    <Content Include="Views\lichtrinhthuctes\Details.cshtml" />
+    <Content Include="Views\lichtrinhthuctes\Edit.cshtml" />
+    <Content Include="Views\lichtrinhthuctes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

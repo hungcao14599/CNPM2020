@@ -1,0 +1,49 @@
+﻿@model V1_BTL_CNPM.Models.kehoachgiangday
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <h4>Thông tin chi tiết kế hoạch giảng dạy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dd>
+            <b>Mã kế hoạch giảng dạy</b>: @Html.DisplayFor(model => model.MaKHGD)
+        </dd>
+
+        <dd>
+            <b>Bài học dự kiến</b>: @Html.DisplayFor(model => model.BaiHocDK)
+        </dd>
+
+
+
+        <dd>
+            <b>Địa điểm dự kiến</b>: @Html.DisplayFor(model => model.DiaDiemDK)
+        </dd>
+
+
+
+        <dd>
+            <b>Thời gian dự kiến bắt đầu</b>: @Html.DisplayFor(model => model.ThoiGianDKBD)
+        </dd>
+
+
+
+        <dd>
+            <b>Thời gian dự kiến kết thúc</b>: @Html.DisplayFor(model => model.ThoiGianDKKT)
+        </dd>
+
+
+
+        <dd>
+            <b>Giảng viên phụ trách</b>: @Html.DisplayFor(model => model.giangvien.HoTenGV)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Cập nhật", "Edit", new { id = Model.MaKHGD }) |
+    @Html.ActionLink("Trở lại danh sách", "Index")
+</p>

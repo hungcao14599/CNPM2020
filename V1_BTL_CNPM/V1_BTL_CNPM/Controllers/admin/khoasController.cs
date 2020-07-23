@@ -37,6 +37,13 @@ namespace V1_BTL_CNPM.Controllers
         }
 
         // GET: khoas/Create
+
+        public bool CheckMaKhoa(string makhoa)
+        {
+            return db.khoas.Count(x => x.MaKhoa == makhoa) > 0;
+        }
+
+
         public ActionResult Create()
         {
             return View();
@@ -44,14 +51,22 @@ namespace V1_BTL_CNPM.Controllers
 
        
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TenKhoa,MaKhoa")] khoa khoa)
+
+        public ActionResult Create(khoa khoa)
         {
             if (ModelState.IsValid)
             {
-                db.khoas.Add(khoa);
-                db.SaveChanges();
-                return RedirectToAction("Khoa");
+                if (CheckMaKhoa(khoa.MaKhoa))
+                {
+                    Response.Write("<script>alert('Khoa này đã tồn tại')</script>");
+                }
+                else
+                {
+                    db.khoas.Add(khoa);
+                    db.SaveChanges();
+                    return RedirectToAction("Khoa");
+                }
+                
             }
 
             return View(khoa);
@@ -74,9 +89,9 @@ namespace V1_BTL_CNPM.Controllers
 
         // POST: khoas/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // more details see 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "TenKhoa,MaKhoa")] khoa khoa)
         {
             if (ModelState.IsValid)
@@ -105,7 +120,7 @@ namespace V1_BTL_CNPM.Controllers
 
         // POST: khoas/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
             khoa khoa = db.khoas.Find(id);

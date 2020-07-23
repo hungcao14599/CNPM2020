@@ -37,6 +37,13 @@ namespace V1_BTL_CNPM.Controllers.admin
         }
 
         // GET: mons/Create
+
+        public bool CheckMaMon(string mamon)
+        {
+            return db.mons.Count(x => x.MaMon == mamon) > 0;
+        }
+
+
         public ActionResult Create()
         {
             ViewBag.MaNganh = new SelectList(db.nganhs, "MaNganh", "TenNganh");
@@ -45,14 +52,22 @@ namespace V1_BTL_CNPM.Controllers.admin
 
         
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        
         public ActionResult Create([Bind(Include = "MaMon,TenMon,MaNganh")] mon mon)
         {
             if (ModelState.IsValid)
             {
-                db.mons.Add(mon);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (CheckMaMon(mon.MaMon))
+                {
+                    Response.Write("<script>alert('Môn học này đã tồn tại')</script>");
+                }
+                else
+                {
+                    db.mons.Add(mon);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                
             }
 
             ViewBag.MaNganh = new SelectList(db.nganhs, "MaNganh", "TenNganh", mon.MaNganh);

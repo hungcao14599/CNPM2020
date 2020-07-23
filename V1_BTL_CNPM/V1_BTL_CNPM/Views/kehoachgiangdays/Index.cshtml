@@ -1,0 +1,58 @@
+﻿@model IEnumerable<V1_BTL_CNPM.Models.kehoachgiangday>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4>Thông tin kế hoạch giảng dạy</h4>
+
+<p>
+    @Html.ActionLink("Taọ mới", "Create")
+</p>
+@RenderPage("../Shared/toptable.cshtml")
+<tr>
+    <th rowspan="1" colspan="1">Mã KH giảng dạy</th>
+
+    <th rowspan="1" colspan="1">Bài học dự kiến</th>
+
+    <th rowspan="1" colspan="1">Địa điểm dự kiến</th>
+
+    <th rowspan="1" colspan="1">Thời gian bắt đầu</th>
+
+    <th rowspan="1" colspan="1">Thời gian kết thúc</th>
+
+    <th rowspan="1" colspan="1">Giảng viên phụ trách</th>
+
+    <th rowspan="1" colspan="1">Chức năng</th>
+</tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaKHGD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BaiHocDK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaDiemDK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThoiGianDKBD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThoiGianDKKT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.giangvien.HoTenGV)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.MaKHGD }) |
+            @Html.ActionLink("Details", "Details", new { id = item.MaKHGD }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MaKHGD })
+        </td>
+    </tr>
+}
+
+@RenderPage("../Shared/bottomtable.cshtml")

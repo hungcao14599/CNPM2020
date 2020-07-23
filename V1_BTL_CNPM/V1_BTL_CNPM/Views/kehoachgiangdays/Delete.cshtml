@@ -1,0 +1,56 @@
+﻿@model V1_BTL_CNPM.Models.kehoachgiangday
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h4>Xóa thông tin kế hoạch giảng dạy</h4>
+<hr />
+<h5 style="color:red">Bạn có muốn xóa kế hoạch giảng dạy này không ?</h5>
+<div>
+    <dl class="dl-horizontal">
+        <dd>
+            <b>Mã kế hoạch giảng dạy</b>: @Html.DisplayFor(model => model.MaKHGD)
+        </dd>
+
+        <dd>
+            <b>Bài học dự kiến</b>: @Html.DisplayFor(model => model.BaiHocDK)
+        </dd>
+
+
+
+        <dd>
+            <b>Địa điểm dự kiến</b>: @Html.DisplayFor(model => model.DiaDiemDK)
+        </dd>
+
+
+
+        <dd>
+            <b>Thời gian dự kiến bắt đầu</b>: @Html.DisplayFor(model => model.ThoiGianDKBD)
+        </dd>
+
+
+
+        <dd>
+            <b>Thời gian dự kiến kết thúc</b>: @Html.DisplayFor(model => model.ThoiGianDKKT)
+        </dd>
+
+
+
+        <dd>
+            <b>Giảng viên phụ trách</b>: @Html.DisplayFor(model => model.giangvien.HoTenGV)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa bản ghi" class="btn btn-success" /> |
+
+        </div>
+    }
+    <div>@Html.ActionLink("Trở lại danh sách", "Index")</div>
+</div>

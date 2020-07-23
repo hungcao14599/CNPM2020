@@ -10,124 +10,125 @@ using V1_BTL_CNPM.Models;
 
 namespace V1_BTL_CNPM.Controllers.admin
 {
-    public class lopmonhocsController : BaseController
+    public class lichtrinhthuctesController : Controller
     {
         private db_cnpm_v3Entities db = new db_cnpm_v3Entities();
 
-        // GET: lopmonhocs
+        // GET: lichtrinhthuctes
         public ActionResult Index()
         {
-            var lopmonhocs = db.lopmonhocs.Include(l => l.mon);
-            return View(lopmonhocs.ToList());
+            var lichtrinhthuctes = db.lichtrinhthuctes.Include(l => l.giangvien);
+            return View(lichtrinhthuctes.ToList());
         }
 
-        // GET: lopmonhocs/Details/5
+        // GET: lichtrinhthuctes/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            lopmonhoc lopmonhoc = db.lopmonhocs.Find(id);
-            if (lopmonhoc == null)
+            lichtrinhthucte lichtrinhthucte = db.lichtrinhthuctes.Find(id);
+            if (lichtrinhthucte == null)
             {
                 return HttpNotFound();
             }
-            return View(lopmonhoc);
+            return View(lichtrinhthucte);
         }
 
-        // GET: lopmonhocs/Create
+        // GET: lichtrinhthuctes/Create
 
-        public bool CheckMaLTM(string maltm)
+        public bool CheckMaLTTT(string malttt)
         {
-            return db.lopmonhocs.Count(x => x.MaLTM == maltm) > 0;
+            return db.lichtrinhthuctes.Count(x => x.MaLTTT == malttt) > 0;
         }
+
 
         public ActionResult Create()
         {
-            ViewBag.MaMon = new SelectList(db.mons, "MaMon", "TenMon");
+            ViewBag.MaGV = new SelectList(db.giangviens, "MaGV", "HoTenGV");
             return View();
         }
 
         
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaLTM,TenLopMon,MaMon")] lopmonhoc lopmonhoc)
+        public ActionResult Create([Bind(Include = "MaLTTT,BaiHocTT,DiaDiemTT,ThoiGianTTBD,ThoiGianTTKT,MaGV")] lichtrinhthucte lichtrinhthucte)
         {
             if (ModelState.IsValid)
             {
-                if (CheckMaLTM(lopmonhoc.MaLTM))
+                if (CheckMaLTTT(lichtrinhthucte.MaLTTT))
                 {
-                    Response.Write("<script>alert('Lớp môn học này đã tồn tại')</script>");
+                    Response.Write("<script>alert('Lịch trình thực tế này đã tồn tại')</script>");
                 }
                 else
                 {
-                    db.lopmonhocs.Add(lopmonhoc);
+                    db.lichtrinhthuctes.Add(lichtrinhthucte);
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
                 
             }
 
-            ViewBag.MaMon = new SelectList(db.mons, "MaMon", "TenMon", lopmonhoc.MaMon);
-            return View(lopmonhoc);
+            ViewBag.MaGV = new SelectList(db.giangviens, "MaGV", "HoTenGV", lichtrinhthucte.MaGV);
+            return View(lichtrinhthucte);
         }
 
-        // GET: lopmonhocs/Edit/5
+        // GET: lichtrinhthuctes/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            lopmonhoc lopmonhoc = db.lopmonhocs.Find(id);
-            if (lopmonhoc == null)
+            lichtrinhthucte lichtrinhthucte = db.lichtrinhthuctes.Find(id);
+            if (lichtrinhthucte == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.MaMon = new SelectList(db.mons, "MaMon", "TenMon", lopmonhoc.MaMon);
-            return View(lopmonhoc);
+            ViewBag.MaGV = new SelectList(db.giangviens, "MaGV", "HoTenGV", lichtrinhthucte.MaGV);
+            return View(lichtrinhthucte);
         }
 
-        // POST: lopmonhocs/Edit/5
+        // POST: lichtrinhthuctes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaLTM,TenLopMon,MaMon")] lopmonhoc lopmonhoc)
+        public ActionResult Edit([Bind(Include = "MaLTTT,BaiHocTT,DiaDiemTT,ThoiGianTTBD,ThoiGianTTKT,MaGV")] lichtrinhthucte lichtrinhthucte)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(lopmonhoc).State = EntityState.Modified;
+                db.Entry(lichtrinhthucte).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MaMon = new SelectList(db.mons, "MaMon", "TenMon", lopmonhoc.MaMon);
-            return View(lopmonhoc);
+            ViewBag.MaGV = new SelectList(db.giangviens, "MaGV", "HoTenGV", lichtrinhthucte.MaGV);
+            return View(lichtrinhthucte);
         }
 
-        // GET: lopmonhocs/Delete/5
+        // GET: lichtrinhthuctes/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            lopmonhoc lopmonhoc = db.lopmonhocs.Find(id);
-            if (lopmonhoc == null)
+            lichtrinhthucte lichtrinhthucte = db.lichtrinhthuctes.Find(id);
+            if (lichtrinhthucte == null)
             {
                 return HttpNotFound();
             }
-            return View(lopmonhoc);
+            return View(lichtrinhthucte);
         }
 
-        // POST: lopmonhocs/Delete/5
+        // POST: lichtrinhthuctes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            lopmonhoc lopmonhoc = db.lopmonhocs.Find(id);
-            db.lopmonhocs.Remove(lopmonhoc);
+            lichtrinhthucte lichtrinhthucte = db.lichtrinhthuctes.Find(id);
+            db.lichtrinhthuctes.Remove(lichtrinhthucte);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

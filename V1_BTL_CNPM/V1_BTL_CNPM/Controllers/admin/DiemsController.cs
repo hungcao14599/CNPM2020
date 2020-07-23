@@ -37,6 +37,9 @@ namespace V1_BTL_CNPM.Controllers.admin
         }
 
         // GET: Diems/Create
+
+
+
         public ActionResult Create()
         {
             ViewBag.MaMon = new SelectList(db.mons, "MaMon", "TenMon");
@@ -44,9 +47,7 @@ namespace V1_BTL_CNPM.Controllers.admin
             return View();
         }
 
-        // POST: Diems/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaSV,Diem1,MaMon")] Diem diem)

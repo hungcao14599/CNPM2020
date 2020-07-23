@@ -1,0 +1,58 @@
+﻿@model V1_BTL_CNPM.Models.lichtrinhthucte
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>lichtrinhthucte</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BaiHocTT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaiHocTT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaDiemTT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaDiemTT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThoiGianTTBD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiGianTTBD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThoiGianTTKT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiGianTTKT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.giangvien.HoTenGV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.giangvien.HoTenGV)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaLTTT }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
