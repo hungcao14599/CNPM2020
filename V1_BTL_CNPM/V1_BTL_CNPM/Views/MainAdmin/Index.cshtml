@@ -1,35 +1,237 @@
-﻿
-@{
+﻿@using V1_BTL_CNPM.Models
+@model db_cnpm_v3Entities
 
 
 
-
-}
-
-
-
-<div class="row" style="width: 90%; margin: 0px auto">
-    <div class="col-xl-3 col-md-3 mb-2">
-        <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Tổng số ngành học</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">
-
-                            
-                                <p>@ViewBag.ListCount</p>
-                            
-                            
-
+    <div class="row" style="width: 90%; margin: 0px auto">
+        <div class="col-xl-3 col-md-3 mb-2">
+            <div class="card border-left-dark shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Tổng số khoa</div>
+                            <div class="h5 mb-0 font-weight-bold text-dark">
+                                <p>@Model.khoas.Count()</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-dark"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <div class="col-xl-3 col-md-3 mb-2">
+            <div class="card border-left-dark shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Tổng số ngành học</div>
+                            <div class="h5 mb-0 font-weight-bold text-dark">
+                                <p>@Model.nganhs.Count()</p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-swatchbook fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xl-3 col-md-3 mb-2">
+            <div class="card border-left-dark shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Tổng số môn học</div>
+                            <div class="h5 mb-0 font-weight-bold text-dark ">
+                                <p>@Model.mons.Count()</p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-book fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xl-3 col-md-3 mb-2">
+            <div class="card border-left-dark shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Tổng số lớp môn học</div>
+                            <div class="h5 mb-0 font-weight-bold text-dark">
+                                <p>@Model.lopmonhocs.Count()</p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-book fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xl-3 col-md-3 mb-2">
+            <div class="card border-left-dark shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Tổng số lớp học phần</div>
+                            <div class="h5 mb-0 font-weight-bold text-dark">
+                                <p>@Model.lophocphans.Count()</p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-puzzle-piece fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-xl-3 col-md-3 mb-2">
+            <div class="card border-left-dark shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Tổng số thời gian</div>
+                            <div class="h5 mb-0 font-weight-bold text-dark">
+                                <p>@Model.thoigianhocs.Count()</p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="far fa-clock fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xl-3 col-md-3 mb-2">
+            <div class="card border-left-dark shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Tổng số kế hoạch giảng dạy</div>
+                            <div class="h5 mb-0 font-weight-bold text-dark">
+                                <p>@Model.kehoachgiangdays.Count()</p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-clipboard-list fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-3 mb-2">
+            <div class="card border-left-dark shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Tổng số lịch trình thực tế</div>
+                            <div class="h5 mb-0 font-weight-bold text-dark">
+                                <p>@Model.lichtrinhthuctes.Count()</p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+        <div class="col-xl-3 col-md-3 mb-2">
+            <div class="card border-left-dark shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Tổng số tài khoản</div>
+                            <div class="h5 mb-0 font-weight-bold text-dark">
+                                <p>@Model.taikhoans.Count()</p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-xl-3 col-md-3 mb-2">
+            <div class="card border-left-dark shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Tổng số giảng viên</div>
+                            <div class="h5 mb-0 font-weight-bold text-dark">
+                                <p>@Model.giangviens.Count()</p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-dark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div></div>
+
+
+
+            <div class="col-xl-3 col-md-3 mb-2">
+                <div class="card border-left-dark shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Tổng số sinh viên</div>
+                                <div class="h5 mb-0 font-weight-bold text-dark">
+                                    <p>@Model.sinhviens.Count()</p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-calendar fa-2x text-dark"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
     </div>
-</div>
 

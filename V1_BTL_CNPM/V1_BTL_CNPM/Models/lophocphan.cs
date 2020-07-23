@@ -14,21 +14,12 @@ namespace V1_BTL_CNPM.Models
     
     public partial class lophocphan
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public lophocphan()
-        {
-            this.ctlophps = new HashSet<ctlophp>();
-            this.ctlophps1 = new HashSet<ctlophp>();
-        }
-    
         public string MaLHP { get; set; }
         public string TenLopHP { get; set; }
         public string MaTGH { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ctlophp> ctlophps { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ctlophp> ctlophps1 { get; set; }
+        public virtual ctlophp ctlophp { get; set; }
+        public virtual ctlophp ctlophp1 { get; set; }
         public virtual thoigianhoc thoigianhoc { get; set; }
     }
 }

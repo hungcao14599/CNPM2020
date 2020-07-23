@@ -21,8 +21,8 @@ namespace V1_BTL_CNPM.Models
         }
     
         public string NamHoc { get; set; }
-        public int HocKy { get; set; }
-        public int GiaiDoan { get; set; }
+        public Nullable<int> HocKy { get; set; }
+        public Nullable<int> GiaiDoan { get; set; }
         public string MaTGH { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

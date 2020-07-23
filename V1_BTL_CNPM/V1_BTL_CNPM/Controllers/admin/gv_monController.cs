@@ -102,18 +102,20 @@ namespace V1_BTL_CNPM.Controllers.admin
             ViewBag.MaGV = new SelectList(db.giangviens, "MaGV", "HoTenGV", gv_mon.MaGV);
             ViewBag.MaMon = new SelectList(db.mons, "MaMon", "TenMon", gv_mon.MaMon);
             ViewBag.MaMon = new SelectList(db.mons, "MaMon", "TenMon", gv_mon.MaMon);
+            ViewBag.MaNganh = new SelectList(db.nganhs, "MaNganh", "TenNganh");
             return View(gv_mon);
         }
 
-        // POST: gv_mon/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaGV,MaMon")] gv_mon gv_mon)
+        
+        public ActionResult Edit(gv_mon gv_mon)
         {
             if (ModelState.IsValid)
             {
+                mon mon = new mon();
+                db.Entry(mon).State = EntityState.Modified;
+                db.SaveChanges();
                 db.Entry(gv_mon).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -122,6 +124,8 @@ namespace V1_BTL_CNPM.Controllers.admin
             ViewBag.MaGV = new SelectList(db.giangviens, "MaGV", "HoTenGV", gv_mon.MaGV);
             ViewBag.MaMon = new SelectList(db.mons, "MaMon", "TenMon", gv_mon.MaMon);
             ViewBag.MaMon = new SelectList(db.mons, "MaMon", "TenMon", gv_mon.MaMon);
+
+            ViewBag.MaNganh = new SelectList(db.nganhs, "MaNganh", "TenNganh");
             return View(gv_mon);
         }
 

@@ -15,12 +15,13 @@ namespace V1_BTL_CNPM.Models
     public partial class kehoachgiangday
     {
         public string MaKHGD { get; set; }
-        public string BaiHocDK { get; set; }
+        public string MaMon { get; set; }
         public string DiaDiemDK { get; set; }
         public Nullable<System.DateTime> ThoiGianDKBD { get; set; }
         public Nullable<System.DateTime> ThoiGianDKKT { get; set; }
         public string MaGV { get; set; }
     
         public virtual giangvien giangvien { get; set; }
+        public virtual mon mon { get; set; }
     }
 }

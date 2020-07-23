@@ -47,7 +47,7 @@
       <EntityTypeMapping TypeName="db_cnpm_v3Model.kehoachgiangday">
         <MappingFragment StoreEntitySet="kehoachgiangday">
           <ScalarProperty Name="MaKHGD" ColumnName="MaKHGD" />
-          <ScalarProperty Name="BaiHocDK" ColumnName="BaiHocDK" />
+          <ScalarProperty Name="MaMon" ColumnName="MaMon" />
           <ScalarProperty Name="DiaDiemDK" ColumnName="DiaDiemDK" />
           <ScalarProperty Name="ThoiGianDKBD" ColumnName="ThoiGianDKBD" />
           <ScalarProperty Name="ThoiGianDKKT" ColumnName="ThoiGianDKKT" />
@@ -67,7 +67,7 @@
       <EntityTypeMapping TypeName="db_cnpm_v3Model.lichtrinhthucte">
         <MappingFragment StoreEntitySet="lichtrinhthucte">
           <ScalarProperty Name="MaLTTT" ColumnName="MaLTTT" />
-          <ScalarProperty Name="BaiHocTT" ColumnName="BaiHocTT" />
+          <ScalarProperty Name="MaMon" ColumnName="MaMon" />
           <ScalarProperty Name="DiaDiemTT" ColumnName="DiaDiemTT" />
           <ScalarProperty Name="ThoiGianTTBD" ColumnName="ThoiGianTTBD" />
           <ScalarProperty Name="ThoiGianTTKT" ColumnName="ThoiGianTTKT" />

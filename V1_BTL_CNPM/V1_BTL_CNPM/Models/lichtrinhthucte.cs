@@ -15,12 +15,13 @@ namespace V1_BTL_CNPM.Models
     public partial class lichtrinhthucte
     {
         public string MaLTTT { get; set; }
-        public string BaiHocTT { get; set; }
+        public string MaMon { get; set; }
         public string DiaDiemTT { get; set; }
         public Nullable<System.DateTime> ThoiGianTTBD { get; set; }
         public Nullable<System.DateTime> ThoiGianTTKT { get; set; }
         public string MaGV { get; set; }
     
         public virtual giangvien giangvien { get; set; }
+        public virtual mon mon { get; set; }
     }
 }

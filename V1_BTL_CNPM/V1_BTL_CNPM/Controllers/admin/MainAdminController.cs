@@ -15,10 +15,17 @@ namespace V1_BTL_CNPM.Controllers.admin
         public ActionResult Index()
         {
 
-            var query = db.nganhs.Where(x => x.MaNganh != string.Empty);
+            /*var query = db.nganhs.Where(x => x.MaNganh != string.Empty);
             int count = query.Count();
             ViewBag.ListCount = count;
-            return View(query.ToList());
+
+            //var query1 = db.khoas.Where(x => x.MaNganh != string.Empty);
+            //int count = query.Count();
+            ViewBag.ListCount = count;
+
+
+            //return View(new {a = query.ToList(), b =  });*/
+            return View(db);
 
 
         }
