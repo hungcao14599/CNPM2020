@@ -17,19 +17,13 @@ namespace V1_BTL_CNPM.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public khoa()
         {
-            this.giangviens = new HashSet<giangvien>();
             this.nganhs = new HashSet<nganh>();
-            this.sinhviens = new HashSet<sinhvien>();
         }
     
         public string MaKhoa { get; set; }
         public string TenKhoa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<giangvien> giangviens { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<nganh> nganhs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<sinhvien> sinhviens { get; set; }
     }
 }

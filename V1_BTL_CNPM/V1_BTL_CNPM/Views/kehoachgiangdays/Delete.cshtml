@@ -2,55 +2,64 @@
 
 @{
     ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h4>Xóa thông tin kế hoạch giảng dạy</h4>
-<hr />
-<h5 style="color:red">Bạn có muốn xóa kế hoạch giảng dạy này không ?</h5>
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
 <div>
+    <h4>kehoachgiangday</h4>
+    <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaDiemDK)
+        </dt>
+
         <dd>
-            <b>Mã kế hoạch giảng dạy</b>: @Html.DisplayFor(model => model.MaKHGD)
+            @Html.DisplayFor(model => model.DiaDiemDK)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.ThoiGianDKBD)
+        </dt>
+
         <dd>
-            <b>Bài học dự kiến</b>: @Html.DisplayFor(model => model.BaiHocDK)
+            @Html.DisplayFor(model => model.ThoiGianDKBD)
         </dd>
 
-
+        <dt>
+            @Html.DisplayNameFor(model => model.ThoiGianDKKT)
+        </dt>
 
         <dd>
-            <b>Địa điểm dự kiến</b>: @Html.DisplayFor(model => model.DiaDiemDK)
+            @Html.DisplayFor(model => model.ThoiGianDKKT)
         </dd>
 
-
+        <dt>
+            @Html.DisplayNameFor(model => model.giangvien.HoTenGV)
+        </dt>
 
         <dd>
-            <b>Thời gian dự kiến bắt đầu</b>: @Html.DisplayFor(model => model.ThoiGianDKBD)
+            @Html.DisplayFor(model => model.giangvien.HoTenGV)
         </dd>
 
-
-
-        <dd>
-            <b>Thời gian dự kiến kết thúc</b>: @Html.DisplayFor(model => model.ThoiGianDKKT)
-        </dd>
-
-
+        <dt>
+            @Html.DisplayNameFor(model => model.mon.TenMon)
+        </dt>
 
         <dd>
-            <b>Giảng viên phụ trách</b>: @Html.DisplayFor(model => model.giangvien.HoTenGV)
+            @Html.DisplayFor(model => model.mon.TenMon)
         </dd>
 
     </dl>
 
-    @using (Html.BeginForm())
-    {
+    @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Xóa bản ghi" class="btn btn-success" /> |
-
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
         </div>
     }
-    <div>@Html.ActionLink("Trở lại danh sách", "Index")</div>
 </div>

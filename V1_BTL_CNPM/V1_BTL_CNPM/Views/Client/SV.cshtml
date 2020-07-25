@@ -1,0 +1,108 @@
+﻿@model IEnumerable<V1_BTL_CNPM.Models.sinhvien>
+@{
+    Layout = null;
+}
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Tra Cứu Thông Tin Sinh Viên</title>
+    <link rel="stylesheet" href="../../asset/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="../../asset/css/user.css">
+    <link rel="shortcut icon" href="../../asset/client/user/img/mango.ico" />
+</head>
+
+<body>
+    <header style="background-image: url('../../asset/img/Artboard 1.png');">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header"><a class="navbar-brand" href="#"><i class="glyphicon glyphicon-book"></i><span class="text-title">Hệ Thống Tra Cứu <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Thông Tin Sinh Viên</span></a><button data-toggle="collapse" class="navbar-toggle collapsed" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li role="presentation"><a href="#">Home </a></li>
+                        <li role="presentation"><a href="#">About </a></li>
+                        <li role="presentation">@Html.ActionLink("Logout", "Logout", "Client")</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <ul class="nav nav-pills categories">
+        <li><a href="#">Landscape </a></li>
+        <li><a href="#">Macro </a></li>
+        <li><a href="#">Portraits </a></li>
+        <li><a href="#">Locations </a></li>
+        <li><a href="#">Techniques </a></li>
+    </ul>
+    <div class="">
+
+        <div class="row">
+            <div class="col-md-1 "></div>
+            <div class="col-md-2 ">
+                  <div>
+
+                        <p><img src="" width="100" height="100" alt="Image" /></p>
+
+                    </div>
+                    <div>
+                        <h1></h1>
+                        <p class="author"><strong>John Steward</strong> <span class="text-muted">October 6th 2015 </span></p>
+                    </div>
+                
+            </div>
+            <div class="col-md-8 col-md-offset-0 ">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Default</td>
+                            <td>Defaultson</td>
+                            <td>def@somemail.com</td>
+                        </tr>
+                        <tr class="success">
+                            <td>Success</td>
+                            <td>Doe</td>
+                            <td>john@example.com</td>
+                        </tr>
+                        <tr class="danger">
+                            <td>Danger</td>
+                            <td>Moe</td>
+                            <td>mary@example.com</td>
+                        </tr>
+                        <tr class="info">
+                            <td>Info</td>
+                            <td>Dooley</td>
+                            <td>july@example.com</td>
+                        </tr>
+                        <tr class="warning">
+                            <td>Warning</td>
+                            <td>Refs</td>
+                            <td>bo@example.com</td>
+                        </tr>
+                        <tr class="active">
+                            <td>Active</td>
+                            <td>Activeson</td>
+                            <td>act@example.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="col-md-1 "></div>
+            </div>
+        </div></div>
+        <footer>
+            <h5>Photography Blog © 2016</h5>
+        </footer>
+        <script src="../../asset/js/jquery.min.js"></script>
+        <script src="../../asset/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

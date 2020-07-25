@@ -11,14 +11,28 @@ namespace V1_BTL_CNPM.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class Diem
     {
+        [Key, Column(Order = 1)]
+
         public string MaSV { get; set; }
-        public double Diem1 { get; set; }
+
+
+        [Key, Column(Order = 2)]
         public string MaMon { get; set; }
+
+        
+
+        
+        public double Diem1 { get; set; }
+        
     
+        [ForeignKey("MaMon")]
         public virtual mon mon { get; set; }
+        [ForeignKey("MaSV")]
         public virtual sinhvien sinhvien { get; set; }
     }
 }

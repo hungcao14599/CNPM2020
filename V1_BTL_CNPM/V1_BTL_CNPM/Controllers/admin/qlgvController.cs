@@ -12,7 +12,7 @@ namespace V1_BTL_CNPM.Controllers.admin
     {
         // GET: qlgv
 
-        private db_cnpm_v3Entities db = new db_cnpm_v3Entities();
+        private db_cnpm_v3_1Entities db = new db_cnpm_v3_1Entities();
 
         public ActionResult qlgv()
         {
@@ -26,7 +26,7 @@ namespace V1_BTL_CNPM.Controllers.admin
                            MaTK = a.MaTK,
                            MaGV = b.MaGV,
                            HoTenGV = b.HoTenGV,
-                           MaKhoa = b.MaKhoa,
+                           MaKhoa = b.MaNganh,
                            NgaySinh = b.NgaySinh,
                            DiaChi = b.DiaChi,
                            SoDienThoai = b.SoDienThoai,

@@ -4,45 +4,82 @@
     ViewBag.Title = "Index";
 }
 
+<style>
+    .tk {
+        width: 250px;
+        box-sizing: border-box;
+        border: 1px solid #ece6e6;
+        border-radius: 5px;
+        font-size: 14px;
+        background-color: white;
+        background-image: url('https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-256.png');
+        background-size: 23px;
+        background-position: 7px 7px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+        height: 40px;
+    }
+
+    input[type=text]:focus {
+        width: 40%;
+    }
+</style>
 <p>
-    @Html.ActionLink("Tạo mới", "Create")
+
+    @using (Html.BeginForm("Search", "nganhs", FormMethod.Get))
+
+    {
+
+    <p>
+
+        <input type="text" name="SearchString" placeholder="Tìm kiếm thông tin..." id="SearchString" class="tk">
+
+    </p>
+
+
+}  
+
+<p>
+@Html.ActionLink("Tạo mới", "Create")
 </p>
-@RenderPage("../Shared/toptable.cshtml")
-<tr>
-    <th>
-        Mã ngành
-    </th>
-    <th>
-        Tên ngành
-    </th>
-
-    <th>
-        Tên khoa
-    </th>
-
-    <th>Chức năng</th>
-</tr>
-
-@foreach (var item in Model)
-{
+    @RenderPage("../Shared/toptable.cshtml")
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaNganh)
-        </td>
+        <th>
+            Mã ngành
+        </th>
+        <th>
+            Tên ngành
+        </th>
 
+        <th>
+            Tên khoa
+        </th>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.TenNganh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.khoa.TenKhoa)
-        </td>
-        <td>
-            @Html.ActionLink("Cập nhật", "Edit", new { id = item.MaNganh }) |
-            @Html.ActionLink("Chi tiết", "Details", new { id = item.MaNganh }) |
-            @Html.ActionLink("Xóa", "Delete", new { id = item.MaNganh })
-        </td>
+        <th>Chức năng</th>
     </tr>
-}
 
-@RenderPage("../Shared/bottomtable.cshtml")
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaNganh)
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.TenNganh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.khoa.TenKhoa)
+            </td>
+            <td>
+                @Html.ActionLink("Cập nhật", "Edit", new { id = item.MaNganh }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.MaNganh }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.MaNganh })
+            </td>
+        </tr>
+    }
+
+    @RenderPage("../Shared/bottomtable.cshtml")

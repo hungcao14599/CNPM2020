@@ -12,12 +12,12 @@ namespace V1_BTL_CNPM.Controllers.admin
 {
     public class kehoachgiangdaysController : Controller
     {
-        private db_cnpm_v3Entities db = new db_cnpm_v3Entities();
+        private db_cnpm_v3_1Entities db = new db_cnpm_v3_1Entities();
 
         // GET: kehoachgiangdays
         public ActionResult Index()
         {
-            var kehoachgiangdays = db.kehoachgiangdays.Include(k => k.giangvien);
+            var kehoachgiangdays = db.kehoachgiangdays.Include(k => k.giangvien).Include(k => k.mon);
             return View(kehoachgiangdays.ToList());
         }
 
@@ -37,40 +37,29 @@ namespace V1_BTL_CNPM.Controllers.admin
         }
 
         // GET: kehoachgiangdays/Create
-
-        public bool CheckMaKHGD(string makhgd)
-        {
-            return db.kehoachgiangdays.Count(x => x.MaKHGD == makhgd) > 0;
-
-
-        }
         public ActionResult Create()
         {
             ViewBag.MaGV = new SelectList(db.giangviens, "MaGV", "HoTenGV");
+            ViewBag.MaMon = new SelectList(db.mons, "MaMon", "TenMon");
             return View();
         }
 
-        
+        // POST: kehoachgiangdays/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        //[ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaKHGD,BaiHocDK,DiaDiemDK,ThoiGianDKBD,ThoiGianDKKT,MaGV")] kehoachgiangday kehoachgiangday)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "MaKHGD,MaMon,DiaDiemDK,ThoiGianDKBD,ThoiGianDKKT,MaGV")] kehoachgiangday kehoachgiangday)
         {
             if (ModelState.IsValid)
             {
-                if (CheckMaKHGD(kehoachgiangday.MaKHGD))
-                {
-                    Response.Write("<script>alert('Kế hoạch giảng dạy này đã tồn tại')</script>");
-                }
-                else
-                {
-                    db.kehoachgiangdays.Add(kehoachgiangday);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
-                }
-                
+                db.kehoachgiangdays.Add(kehoachgiangday);
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
 
             ViewBag.MaGV = new SelectList(db.giangviens, "MaGV", "HoTenGV", kehoachgiangday.MaGV);
+            ViewBag.MaMon = new SelectList(db.mons, "MaMon", "TenMon", kehoachgiangday.MaMon);
             return View(kehoachgiangday);
         }
 
@@ -87,6 +76,7 @@ namespace V1_BTL_CNPM.Controllers.admin
                 return HttpNotFound();
             }
             ViewBag.MaGV = new SelectList(db.giangviens, "MaGV", "HoTenGV", kehoachgiangday.MaGV);
+            ViewBag.MaMon = new SelectList(db.mons, "MaMon", "TenMon", kehoachgiangday.MaMon);
             return View(kehoachgiangday);
         }
 
@@ -95,7 +85,7 @@ namespace V1_BTL_CNPM.Controllers.admin
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaKHGD,BaiHocDK,DiaDiemDK,ThoiGianDKBD,ThoiGianDKKT,MaGV")] kehoachgiangday kehoachgiangday)
+        public ActionResult Edit([Bind(Include = "MaKHGD,MaMon,DiaDiemDK,ThoiGianDKBD,ThoiGianDKKT,MaGV")] kehoachgiangday kehoachgiangday)
         {
             if (ModelState.IsValid)
             {
@@ -104,6 +94,7 @@ namespace V1_BTL_CNPM.Controllers.admin
                 return RedirectToAction("Index");
             }
             ViewBag.MaGV = new SelectList(db.giangviens, "MaGV", "HoTenGV", kehoachgiangday.MaGV);
+            ViewBag.MaMon = new SelectList(db.mons, "MaMon", "TenMon", kehoachgiangday.MaMon);
             return View(kehoachgiangday);
         }
 

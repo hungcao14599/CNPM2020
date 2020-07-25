@@ -1,0 +1,86 @@
+﻿
+@model IEnumerable<V1_BTL_CNPM.Models.lopmonhoc>
+
+<style>
+    .tk {
+        width: 250px;
+        box-sizing: border-box;
+        border: 2px solid #8f8f8f;
+        border-radius: 4px;
+        font-size: 14px;
+        background-color: white;
+        background-image: url('https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-256.png');
+        background-size: 27px;
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+    }
+
+    input[type=text]:focus {
+        width: 50%;
+    }
+</style>
+
+<p>
+
+
+    <!-- 1. Đoạn cần thêm -->
+
+    @using (Html.BeginForm("Search", "lopmonhocs", FormMethod.Get))
+
+    {
+
+    <p>
+        <input type="text" name="SearchString" placeholder="Tìm kiếm thông tin..." id="SearchString" class="tk">
+
+    </p>
+}
+
+    <!-- Kết thúc -->
+
+
+    @RenderPage("../Shared/toptable.cshtml")
+
+<tr>
+
+    <th rowspan="1" colspan="1">Mã lớp môn học</th>
+
+    <th rowspan="1" colspan="1">Tên lớp môn học</th>
+
+    <th rowspan="1" colspan="1">Môn học</th>
+
+    <th rowspan="1" colspan="1">Chức năng</th>
+</tr>
+
+    @foreach (var item in Model)
+
+    {
+
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaLTM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenLopMon)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.mon.TenMon)
+    </td>
+    <td>
+        @Html.ActionLink("Cập nhật", "Edit", new { id = item.MaLTM }) |
+        @Html.ActionLink("Chi tiết", "Details", new { id = item.MaLTM }) |
+        @Html.ActionLink("Xóa", "Delete", new { id = item.MaLTM })
+    </td>
+</tr>
+
+
+    }
+
+    @RenderPage("../Shared/bottomtable.cshtml")
+    <div>
+        @Html.ActionLink("Trở lại danh sách", "Index")
+    </div>
+
+

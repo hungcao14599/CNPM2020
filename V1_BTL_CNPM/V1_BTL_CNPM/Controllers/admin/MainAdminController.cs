@@ -10,7 +10,7 @@ namespace V1_BTL_CNPM.Controllers.admin
     public class MainAdminController : BaseController
     {
 
-        private db_cnpm_v3Entities db = new db_cnpm_v3Entities();
+        private db_cnpm_v3_1Entities db = new db_cnpm_v3_1Entities();
         // GET: MainAdmin
         public ActionResult Index()
         {

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="db_cnpm_v3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="db_cnpm_v3_1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="ctlophp">
     <Key>
       <PropertyRef Name="MaLHP" />
@@ -9,11 +9,12 @@
   </EntityType>
   <EntityType Name="Diem">
     <Key>
-      <PropertyRef Name="Diem" />
+      <PropertyRef Name="MaSV" />
+      <PropertyRef Name="MaMon" />
     </Key>
-    <Property Name="MaSV" Type="varchar" MaxLength="10" />
-    <Property Name="Diem" Type="float" Nullable="false" />
-    <Property Name="MaMon" Type="varchar" MaxLength="10" />
+    <Property Name="MaSV" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Diem" Type="float" />
+    <Property Name="MaMon" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <EntityType Name="giangvien">
     <Key>
@@ -29,7 +30,7 @@
     <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
     <Property Name="HinhAnh" Type="varchar" MaxLength="250" />
     <Property Name="MaTK" Type="int" />
-    <Property Name="MaKhoa" Type="varchar" MaxLength="10" />
+    <Property Name="MaNganh" Type="varchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="gv_mon">
     <Key>
@@ -113,7 +114,7 @@
     <Property Name="Email" Type="varchar" MaxLength="40" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
     <Property Name="HinhAnh" Type="varchar" MaxLength="250" />
-    <Property Name="MaKhoa" Type="varchar" MaxLength="10" />
+    <Property Name="MaNganh" Type="varchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="taikhoan">
     <Key>
@@ -159,7 +160,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Diem__MaMon__4D94879B">
-    <End Role="mon" Type="Self.mon" Multiplicity="0..1" />
+    <End Role="mon" Type="Self.mon" Multiplicity="1" />
     <End Role="Diem" Type="Self.Diem" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="mon">
@@ -171,7 +172,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Diem__MaSV__4CA06362">
-    <End Role="sinhvien" Type="Self.sinhvien" Multiplicity="0..1" />
+    <End Role="sinhvien" Type="Self.sinhvien" Multiplicity="1" />
     <End Role="Diem" Type="Self.Diem" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="sinhvien">
@@ -182,15 +183,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__giangvien__MaKho__31EC6D26">
-    <End Role="khoa" Type="Self.khoa" Multiplicity="0..1" />
+  <Association Name="FK__giangvien__MaNga__31EC6D26">
+    <End Role="nganh" Type="Self.nganh" Multiplicity="0..1" />
     <End Role="giangvien" Type="Self.giangvien" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="khoa">
-        <PropertyRef Name="MaKhoa" />
+      <Principal Role="nganh">
+        <PropertyRef Name="MaNganh" />
       </Principal>
       <Dependent Role="giangvien">
-        <PropertyRef Name="MaKhoa" />
+        <PropertyRef Name="MaNganh" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -326,15 +327,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__sinhvien__MaKhoa__49C3F6B7">
-    <End Role="khoa" Type="Self.khoa" Multiplicity="0..1" />
+  <Association Name="FK__sinhvien__MaNgan__49C3F6B7">
+    <End Role="nganh" Type="Self.nganh" Multiplicity="0..1" />
     <End Role="sinhvien" Type="Self.sinhvien" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="khoa">
-        <PropertyRef Name="MaKhoa" />
+      <Principal Role="nganh">
+        <PropertyRef Name="MaNganh" />
       </Principal>
       <Dependent Role="sinhvien">
-        <PropertyRef Name="MaKhoa" />
+        <PropertyRef Name="MaNganh" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -398,7 +399,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="db_cnpm_v3ModelStoreContainer">
+  <EntityContainer Name="db_cnpm_v3_1ModelStoreContainer">
     <EntitySet Name="ctlophp" EntityType="Self.ctlophp" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Diem" EntityType="Self.Diem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="giangvien" EntityType="Self.giangvien" Schema="dbo" store:Type="Tables" />
@@ -429,8 +430,8 @@
       <End Role="sinhvien" EntitySet="sinhvien" />
       <End Role="Diem" EntitySet="Diem" />
     </AssociationSet>
-    <AssociationSet Name="FK__giangvien__MaKho__31EC6D26" Association="Self.FK__giangvien__MaKho__31EC6D26">
-      <End Role="khoa" EntitySet="khoa" />
+    <AssociationSet Name="FK__giangvien__MaNga__31EC6D26" Association="Self.FK__giangvien__MaNga__31EC6D26">
+      <End Role="nganh" EntitySet="nganh" />
       <End Role="giangvien" EntitySet="giangvien" />
     </AssociationSet>
     <AssociationSet Name="FK__giangvien__MaTK__30F848ED" Association="Self.FK__giangvien__MaTK__30F848ED">
@@ -477,8 +478,8 @@
       <End Role="khoa" EntitySet="khoa" />
       <End Role="nganh" EntitySet="nganh" />
     </AssociationSet>
-    <AssociationSet Name="FK__sinhvien__MaKhoa__49C3F6B7" Association="Self.FK__sinhvien__MaKhoa__49C3F6B7">
-      <End Role="khoa" EntitySet="khoa" />
+    <AssociationSet Name="FK__sinhvien__MaNgan__49C3F6B7" Association="Self.FK__sinhvien__MaNgan__49C3F6B7">
+      <End Role="nganh" EntitySet="nganh" />
       <End Role="sinhvien" EntitySet="sinhvien" />
     </AssociationSet>
     <AssociationSet Name="FK__sinhvien__MaTK__48CFD27E" Association="Self.FK__sinhvien__MaTK__48CFD27E">

@@ -12,7 +12,7 @@ namespace V1_BTL_CNPM.Controllers.admin
 {
     public class monsController : BaseController
     {
-        private db_cnpm_v3Entities db = new db_cnpm_v3Entities();
+        private db_cnpm_v3_1Entities db = new db_cnpm_v3_1Entities();
 
         // GET: mons
         public ActionResult Index()
@@ -141,5 +141,20 @@ namespace V1_BTL_CNPM.Controllers.admin
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult Search(string searchString)
+        {
+            var links = from l in db.mons
+                        select l;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                links = links.Where(s => s.TenMon.Contains(searchString));
+            }
+
+            return View(links);
+        }
+
+
     }
 }

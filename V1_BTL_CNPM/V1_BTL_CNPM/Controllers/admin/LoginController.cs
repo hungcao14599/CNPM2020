@@ -9,7 +9,7 @@ namespace V1_BTL_CNPM.Controllers
     public class LoginController : Controller
     {
 
-        private db_cnpm_v3Entities db = new db_cnpm_v3Entities();
+        private db_cnpm_v3_1Entities db = new db_cnpm_v3_1Entities();
 
         // GET: Login
         public ActionResult Index()
@@ -90,7 +90,14 @@ namespace V1_BTL_CNPM.Controllers
 
                     //Session.Add(CommonConstants.SESSION_CREDENTIALS, listCredentials);
                     Session.Add(CommonConstants.USER_SESSION, userSession);
-                    return RedirectToAction("Index", "MainAdmin");
+                    if(user.Quyen == 1)
+                    {
+                        return RedirectToAction("Index", "MainAdmin");
+                    }
+                    else if(user.Quyen == 2)
+                    {
+                        return RedirectToAction("Index", "MainGV");
+                    }
                 }
                 else if (result == 0)
                 {
@@ -151,7 +158,7 @@ namespace V1_BTL_CNPM.Controllers
             {
                 if(isAminLogin == true)
                 {
-                    if(result.Quyen == CommonConstants.ADMIN)
+                    if(result.Quyen == CommonConstants.ADMIN || result.Quyen == CommonConstants.GIANGVIEN)
                     {
                         if (result.MatKhau == passWord)
                             return 1;

@@ -12,12 +12,12 @@ namespace V1_BTL_CNPM.Controllers.admin
 {
     public class lichtrinhthuctesController : Controller
     {
-        private db_cnpm_v3Entities db = new db_cnpm_v3Entities();
+        private db_cnpm_v3_1Entities db = new db_cnpm_v3_1Entities();
 
         // GET: lichtrinhthuctes
         public ActionResult Index()
         {
-            var lichtrinhthuctes = db.lichtrinhthuctes.Include(l => l.giangvien);
+            var lichtrinhthuctes = db.lichtrinhthuctes.Include(l => l.giangvien).Include(l => l.mon);
             return View(lichtrinhthuctes.ToList());
         }
 
@@ -37,40 +37,29 @@ namespace V1_BTL_CNPM.Controllers.admin
         }
 
         // GET: lichtrinhthuctes/Create
-
-        public bool CheckMaLTTT(string malttt)
-        {
-            return db.lichtrinhthuctes.Count(x => x.MaLTTT == malttt) > 0;
-        }
-
-
         public ActionResult Create()
         {
             ViewBag.MaGV = new SelectList(db.giangviens, "MaGV", "HoTenGV");
+            ViewBag.MaMon = new SelectList(db.mons, "MaMon", "TenMon");
             return View();
         }
 
-        
+        // POST: lichtrinhthuctes/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        //[ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaLTTT,BaiHocTT,DiaDiemTT,ThoiGianTTBD,ThoiGianTTKT,MaGV")] lichtrinhthucte lichtrinhthucte)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "MaLTTT,MaMon,DiaDiemTT,ThoiGianTTBD,ThoiGianTTKT,MaGV")] lichtrinhthucte lichtrinhthucte)
         {
             if (ModelState.IsValid)
             {
-                if (CheckMaLTTT(lichtrinhthucte.MaLTTT))
-                {
-                    Response.Write("<script>alert('Lịch trình thực tế này đã tồn tại')</script>");
-                }
-                else
-                {
-                    db.lichtrinhthuctes.Add(lichtrinhthucte);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
-                }
-                
+                db.lichtrinhthuctes.Add(lichtrinhthucte);
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
 
             ViewBag.MaGV = new SelectList(db.giangviens, "MaGV", "HoTenGV", lichtrinhthucte.MaGV);
+            ViewBag.MaMon = new SelectList(db.mons, "MaMon", "TenMon", lichtrinhthucte.MaMon);
             return View(lichtrinhthucte);
         }
 
@@ -87,6 +76,7 @@ namespace V1_BTL_CNPM.Controllers.admin
                 return HttpNotFound();
             }
             ViewBag.MaGV = new SelectList(db.giangviens, "MaGV", "HoTenGV", lichtrinhthucte.MaGV);
+            ViewBag.MaMon = new SelectList(db.mons, "MaMon", "TenMon", lichtrinhthucte.MaMon);
             return View(lichtrinhthucte);
         }
 
@@ -95,7 +85,7 @@ namespace V1_BTL_CNPM.Controllers.admin
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaLTTT,BaiHocTT,DiaDiemTT,ThoiGianTTBD,ThoiGianTTKT,MaGV")] lichtrinhthucte lichtrinhthucte)
+        public ActionResult Edit([Bind(Include = "MaLTTT,MaMon,DiaDiemTT,ThoiGianTTBD,ThoiGianTTKT,MaGV")] lichtrinhthucte lichtrinhthucte)
         {
             if (ModelState.IsValid)
             {
@@ -104,6 +94,7 @@ namespace V1_BTL_CNPM.Controllers.admin
                 return RedirectToAction("Index");
             }
             ViewBag.MaGV = new SelectList(db.giangviens, "MaGV", "HoTenGV", lichtrinhthucte.MaGV);
+            ViewBag.MaMon = new SelectList(db.mons, "MaMon", "TenMon", lichtrinhthucte.MaMon);
             return View(lichtrinhthucte);
         }
 

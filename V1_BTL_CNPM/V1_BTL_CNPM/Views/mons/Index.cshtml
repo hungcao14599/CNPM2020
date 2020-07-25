@@ -6,40 +6,78 @@
 
 <h4>Thông tin môn học</h4>
 
+<style>
+    .tk {
+        width: 250px;
+        box-sizing: border-box;
+        border: 1px solid #ece6e6;
+        border-radius: 5px;
+        font-size: 14px;
+        background-color: white;
+        background-image: url('https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-256.png');
+        background-size: 23px;
+        background-position: 7px 7px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+        height: 40px;
+    }
+
+    input[type=text]:focus {
+        width: 40%;
+    }
+</style>
 <p>
-    @Html.ActionLink("Tạo mới", "Create")
-</p>
-@RenderPage("../Shared/toptable.cshtml")
-<tr>
-    <th rowspan="1" colspan="1">Mã môn</th>
 
-    <th rowspan="1" colspan="1">Tên môn</th>
+    @using (Html.BeginForm("Search", "mons", FormMethod.Get))
 
-    <th rowspan="1" colspan="1">Mã ngành</th>
+    {
 
-    <th rowspan="1" colspan="1">Chức năng</th>
-</tr>
+    <p>
+
+        <input type="text" name="SearchString" placeholder="Tìm kiếm thông tin..." id="SearchString" class="tk">
+
+    </p>
 
 
-@foreach (var item in Model)
-{
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.MaMon)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.TenMon)
-    </td>
-
-    <td>
-        @Html.DisplayFor(modelItem => item.nganh.TenNganh)
-    </td>
-    <td>
-        @Html.ActionLink("Cập nhật", "Edit", new { id = item.MaMon }) |
-        @Html.ActionLink("Chi tiết", "Details", new { id = item.MaMon }) |
-        @Html.ActionLink("Xóa", "Delete", new { id = item.MaMon })
-    </td>
-</tr>
 }
 
-@RenderPage("../Shared/bottomtable.cshtml")
+
+    <p>
+        @Html.ActionLink("Tạo mới", "Create")
+    </p>
+    @RenderPage("../Shared/toptable.cshtml")
+    <tr>
+        <th rowspan="1" colspan="1">Mã môn</th>
+
+        <th rowspan="1" colspan="1">Tên môn</th>
+
+        <th rowspan="1" colspan="1">Mã ngành</th>
+
+        <th rowspan="1" colspan="1">Chức năng</th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaMon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenMon)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.nganh.TenNganh)
+            </td>
+            <td>
+                @Html.ActionLink("Cập nhật", "Edit", new { id = item.MaMon }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.MaMon }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.MaMon })
+            </td>
+        </tr>
+    }
+
+    @RenderPage("../Shared/bottomtable.cshtml")

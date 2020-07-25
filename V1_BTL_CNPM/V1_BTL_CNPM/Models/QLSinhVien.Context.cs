@@ -13,10 +13,10 @@ namespace V1_BTL_CNPM.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class db_cnpm_v3Entities : DbContext
+    public partial class db_cnpm_v3_1Entities : DbContext
     {
-        public db_cnpm_v3Entities()
-            : base("name=db_cnpm_v3Entities")
+        public db_cnpm_v3_1Entities()
+            : base("name=db_cnpm_v3_1Entities")
         {
         }
     

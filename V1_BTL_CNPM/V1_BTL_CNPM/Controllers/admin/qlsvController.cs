@@ -11,7 +11,7 @@ namespace V1_BTL_CNPM.Controllers.admin
 {
     public class qlsvController : Controller
     {
-        private db_cnpm_v3Entities db = new db_cnpm_v3Entities();
+        private db_cnpm_v3_1Entities db = new db_cnpm_v3_1Entities();
 
         public ActionResult qlsv()
         {
@@ -26,7 +26,7 @@ namespace V1_BTL_CNPM.Controllers.admin
 
                            MaSV = b.MaSV,
                            TenSV = b.TenSV,
-                           MaKhoa = b.MaKhoa,
+                           MaKhoa = b.MaNganh,
                            NgaySinh = b.NgaySinh,
                            DiaChi = b.DiaChi,
                            Email = b.Email,

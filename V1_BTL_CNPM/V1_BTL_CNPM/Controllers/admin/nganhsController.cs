@@ -13,7 +13,7 @@ namespace V1_BTL_CNPM.Controllers
 {
     public class nganhsController : BaseController
     {
-        private db_cnpm_v3Entities db = new db_cnpm_v3Entities();
+        private db_cnpm_v3_1Entities db = new db_cnpm_v3_1Entities();
 
         // GET: nganhs
         public ActionResult Index()
@@ -139,5 +139,21 @@ namespace V1_BTL_CNPM.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+        public ActionResult Search(string searchString)
+        {
+            var links = from l in db.nganhs
+                        select l;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                links = links.Where(s => s.TenNganh.Contains(searchString));
+            }
+
+            return View(links);
+        }
+
+
     }
 }

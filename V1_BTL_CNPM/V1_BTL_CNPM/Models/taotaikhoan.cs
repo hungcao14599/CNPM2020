@@ -23,8 +23,8 @@ namespace V1_BTL_CNPM.Models
         
         public DateTime NgayTao { get; set; }
 
-        [Required(ErrorMessage = "Chưa nhập mã khoa")]
-        public string MaKhoa { get; set; }
+        [Required(ErrorMessage = "Chưa nhập mã ngành")]
+        public string MaNganh { get; set; }
 
         [Required(ErrorMessage = "Chưa nhập tài khoản")]
         public string TenTaiKhoan { get; set; }

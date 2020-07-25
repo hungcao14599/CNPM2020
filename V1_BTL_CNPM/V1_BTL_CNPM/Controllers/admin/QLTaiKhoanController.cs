@@ -15,7 +15,7 @@ namespace V1_BTL_CNPM.Controllers.admin
     {
         // GET: QLTaiKhoan
 
-        private db_cnpm_v3Entities db = new db_cnpm_v3Entities();
+        private db_cnpm_v3_1Entities db = new db_cnpm_v3_1Entities();
 
         public ActionResult QLTaiKhoan()
         {
@@ -31,7 +31,7 @@ namespace V1_BTL_CNPM.Controllers.admin
         
         public ActionResult create_taikhoan()
         {
-            ViewBag.MaKhoa = new SelectList(db.khoas, "MaKhoa", "TenKhoa");
+            ViewBag.MaNganh = new SelectList(db.nganhs, "MaNganh", "TenNganh");
             return View();
         }
 
@@ -90,7 +90,7 @@ namespace V1_BTL_CNPM.Controllers.admin
                                 gv.HoTenGV = user.HoTen;
                                 gv.NgaySinh = user.NgaySinh;
                                 gv.DiaChi = user.DiaChi;
-                                gv.MaKhoa = user.MaKhoa;
+                                gv.MaNganh = user.MaNganh;
                                 gv.Email = user.Email;
                                 gv.GioiTinh = user.GioiTinh;
                                 gv.QueQuan = user.QueQuan;
@@ -108,7 +108,7 @@ namespace V1_BTL_CNPM.Controllers.admin
                                 sv.TenSV = user.HoTen;
                                 sv.NgaySinh = user.NgaySinh;
                                 sv.DiaChi = user.DiaChi;
-                                sv.MaKhoa = user.MaKhoa;
+                                sv.MaNganh = user.MaNganh;
                                 sv.Email = user.Email;
                                 sv.GioiTinh = user.GioiTinh;
                                 sv.QueQuan = user.QueQuan;
@@ -123,7 +123,7 @@ namespace V1_BTL_CNPM.Controllers.admin
                     return RedirectToAction("QLTaiKhoan");
                 }
             }
-            ViewBag.MaKhoa = new SelectList(db.khoas, "MaKhoa", "TenKhoa");
+            ViewBag.MaNganh = new SelectList(db.nganhs, "MaNganh", "TenNganh");
             return View(user);
 
 

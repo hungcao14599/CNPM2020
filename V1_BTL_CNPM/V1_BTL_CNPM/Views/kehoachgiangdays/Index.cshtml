@@ -2,39 +2,36 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h4>Thông tin kế hoạch giảng dạy</h4>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Taọ mới", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
-@RenderPage("../Shared/toptable.cshtml")
-<tr>
-    <th rowspan="1" colspan="1">Mã KH giảng dạy</th>
-
-    <th rowspan="1" colspan="1">Bài học dự kiến</th>
-
-    <th rowspan="1" colspan="1">Địa điểm dự kiến</th>
-
-    <th rowspan="1" colspan="1">Thời gian bắt đầu</th>
-
-    <th rowspan="1" colspan="1">Thời gian kết thúc</th>
-
-    <th rowspan="1" colspan="1">Giảng viên phụ trách</th>
-
-    <th rowspan="1" colspan="1">Chức năng</th>
-</tr>
-
-@foreach (var item in Model)
-{
+<table class="table">
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaKHGD)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BaiHocDK)
-        </td>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaDiemDK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThoiGianDKBD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThoiGianDKKT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.giangvien.HoTenGV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mon.TenMon)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
         <td>
             @Html.DisplayFor(modelItem => item.DiaDiemDK)
         </td>
@@ -48,11 +45,14 @@
             @Html.DisplayFor(modelItem => item.giangvien.HoTenGV)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.MaKHGD }) |
-            @Html.ActionLink("Details", "Details", new { id = item.MaKHGD }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.MaKHGD })
+            @Html.DisplayFor(modelItem => item.mon.TenMon)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaKHGD }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaKHGD }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaKHGD })
         </td>
     </tr>
 }
 
-@RenderPage("../Shared/bottomtable.cshtml")
+</table>

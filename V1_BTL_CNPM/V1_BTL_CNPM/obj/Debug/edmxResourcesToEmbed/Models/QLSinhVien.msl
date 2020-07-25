@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="db_cnpm_v3ModelStoreContainer" CdmEntityContainer="db_cnpm_v3Entities">
+  <EntityContainerMapping StorageEntityContainer="db_cnpm_v3_1ModelStoreContainer" CdmEntityContainer="db_cnpm_v3_1Entities">
     <EntitySetMapping Name="ctlophps">
-      <EntityTypeMapping TypeName="db_cnpm_v3Model.ctlophp">
+      <EntityTypeMapping TypeName="db_cnpm_v3_1Model.ctlophp">
         <MappingFragment StoreEntitySet="ctlophp">
           <ScalarProperty Name="MaLTM" ColumnName="MaLTM" />
           <ScalarProperty Name="MaLHP" ColumnName="MaLHP" />
@@ -10,7 +10,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Diems">
-      <EntityTypeMapping TypeName="db_cnpm_v3Model.Diem">
+      <EntityTypeMapping TypeName="db_cnpm_v3_1Model.Diem">
         <MappingFragment StoreEntitySet="Diem">
           <ScalarProperty Name="MaSV" ColumnName="MaSV" />
           <ScalarProperty Name="Diem1" ColumnName="Diem" />
@@ -19,7 +19,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="giangviens">
-      <EntityTypeMapping TypeName="db_cnpm_v3Model.giangvien">
+      <EntityTypeMapping TypeName="db_cnpm_v3_1Model.giangvien">
         <MappingFragment StoreEntitySet="giangvien">
           <ScalarProperty Name="MaGV" ColumnName="MaGV" />
           <ScalarProperty Name="HoTenGV" ColumnName="HoTenGV" />
@@ -31,12 +31,12 @@
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
           <ScalarProperty Name="MaTK" ColumnName="MaTK" />
-          <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
+          <ScalarProperty Name="MaNganh" ColumnName="MaNganh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="gv_mon">
-      <EntityTypeMapping TypeName="db_cnpm_v3Model.gv_mon">
+      <EntityTypeMapping TypeName="db_cnpm_v3_1Model.gv_mon">
         <MappingFragment StoreEntitySet="gv_mon">
           <ScalarProperty Name="MaGV" ColumnName="MaGV" />
           <ScalarProperty Name="MaMon" ColumnName="MaMon" />
@@ -44,7 +44,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="kehoachgiangdays">
-      <EntityTypeMapping TypeName="db_cnpm_v3Model.kehoachgiangday">
+      <EntityTypeMapping TypeName="db_cnpm_v3_1Model.kehoachgiangday">
         <MappingFragment StoreEntitySet="kehoachgiangday">
           <ScalarProperty Name="MaKHGD" ColumnName="MaKHGD" />
           <ScalarProperty Name="MaMon" ColumnName="MaMon" />
@@ -56,7 +56,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="khoas">
-      <EntityTypeMapping TypeName="db_cnpm_v3Model.khoa">
+      <EntityTypeMapping TypeName="db_cnpm_v3_1Model.khoa">
         <MappingFragment StoreEntitySet="khoa">
           <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
           <ScalarProperty Name="TenKhoa" ColumnName="TenKhoa" />
@@ -64,7 +64,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="lichtrinhthuctes">
-      <EntityTypeMapping TypeName="db_cnpm_v3Model.lichtrinhthucte">
+      <EntityTypeMapping TypeName="db_cnpm_v3_1Model.lichtrinhthucte">
         <MappingFragment StoreEntitySet="lichtrinhthucte">
           <ScalarProperty Name="MaLTTT" ColumnName="MaLTTT" />
           <ScalarProperty Name="MaMon" ColumnName="MaMon" />
@@ -76,7 +76,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="lophocphans">
-      <EntityTypeMapping TypeName="db_cnpm_v3Model.lophocphan">
+      <EntityTypeMapping TypeName="db_cnpm_v3_1Model.lophocphan">
         <MappingFragment StoreEntitySet="lophocphan">
           <ScalarProperty Name="MaLHP" ColumnName="MaLHP" />
           <ScalarProperty Name="TenLopHP" ColumnName="TenLopHP" />
@@ -85,7 +85,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="lopmonhocs">
-      <EntityTypeMapping TypeName="db_cnpm_v3Model.lopmonhoc">
+      <EntityTypeMapping TypeName="db_cnpm_v3_1Model.lopmonhoc">
         <MappingFragment StoreEntitySet="lopmonhoc">
           <ScalarProperty Name="MaLTM" ColumnName="MaLTM" />
           <ScalarProperty Name="TenLopMon" ColumnName="TenLopMon" />
@@ -94,7 +94,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="mons">
-      <EntityTypeMapping TypeName="db_cnpm_v3Model.mon">
+      <EntityTypeMapping TypeName="db_cnpm_v3_1Model.mon">
         <MappingFragment StoreEntitySet="mon">
           <ScalarProperty Name="MaMon" ColumnName="MaMon" />
           <ScalarProperty Name="TenMon" ColumnName="TenMon" />
@@ -103,7 +103,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="nganhs">
-      <EntityTypeMapping TypeName="db_cnpm_v3Model.nganh">
+      <EntityTypeMapping TypeName="db_cnpm_v3_1Model.nganh">
         <MappingFragment StoreEntitySet="nganh">
           <ScalarProperty Name="MaNganh" ColumnName="MaNganh" />
           <ScalarProperty Name="TenNganh" ColumnName="TenNganh" />
@@ -112,7 +112,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sinhviens">
-      <EntityTypeMapping TypeName="db_cnpm_v3Model.sinhvien">
+      <EntityTypeMapping TypeName="db_cnpm_v3_1Model.sinhvien">
         <MappingFragment StoreEntitySet="sinhvien">
           <ScalarProperty Name="MaTK" ColumnName="MaTK" />
           <ScalarProperty Name="MaSV" ColumnName="MaSV" />
@@ -124,12 +124,12 @@
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
-          <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
+          <ScalarProperty Name="MaNganh" ColumnName="MaNganh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="taikhoans">
-      <EntityTypeMapping TypeName="db_cnpm_v3Model.taikhoan">
+      <EntityTypeMapping TypeName="db_cnpm_v3_1Model.taikhoan">
         <MappingFragment StoreEntitySet="taikhoan">
           <ScalarProperty Name="TenTaiKhoan" ColumnName="TenTaiKhoan" />
           <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
@@ -140,7 +140,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="thoigianhocs">
-      <EntityTypeMapping TypeName="db_cnpm_v3Model.thoigianhoc">
+      <EntityTypeMapping TypeName="db_cnpm_v3_1Model.thoigianhoc">
         <MappingFragment StoreEntitySet="thoigianhoc">
           <ScalarProperty Name="NamHoc" ColumnName="NamHoc" />
           <ScalarProperty Name="HocKy" ColumnName="HocKy" />

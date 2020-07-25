@@ -10,9 +10,9 @@ using V1_BTL_CNPM.Models;
 
 namespace V1_BTL_CNPM.Controllers.admin
 {
-    public class DiemsController : BaseController
+    public class DiemsController : Controller
     {
-        private db_cnpm_v3Entities db = new db_cnpm_v3Entities();
+        private db_cnpm_v3_1Entities db = new db_cnpm_v3_1Entities();
 
         // GET: Diems
         public ActionResult Index()
@@ -22,13 +22,13 @@ namespace V1_BTL_CNPM.Controllers.admin
         }
 
         // GET: Diems/Details/5
-        public ActionResult Details(double? id)
+        public ActionResult Details(string id, string id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Diem diem = db.Diems.Find(id);
+            Diem diem = db.Diems.Find(new object[] { id, id2 });
             if (diem == null)
             {
                 return HttpNotFound();
@@ -37,9 +37,6 @@ namespace V1_BTL_CNPM.Controllers.admin
         }
 
         // GET: Diems/Create
-
-
-
         public ActionResult Create()
         {
             ViewBag.MaMon = new SelectList(db.mons, "MaMon", "TenMon");
@@ -47,7 +44,9 @@ namespace V1_BTL_CNPM.Controllers.admin
             return View();
         }
 
-        
+        // POST: Diems/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaSV,Diem1,MaMon")] Diem diem)
@@ -65,13 +64,13 @@ namespace V1_BTL_CNPM.Controllers.admin
         }
 
         // GET: Diems/Edit/5
-        public ActionResult Edit(double? id)
+        public ActionResult Edit(string id, string id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Diem diem = db.Diems.Find(id);
+            Diem diem = db.Diems.Find(new object[] { id, id2 });
             if (diem == null)
             {
                 return HttpNotFound();
@@ -81,12 +80,9 @@ namespace V1_BTL_CNPM.Controllers.admin
             return View(diem);
         }
 
-        // POST: Diems/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaSV,Diem1,MaMon")] Diem diem)
+        //[ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "MaMon,MaSV,Diem1")] Diem diem)
         {
             if (ModelState.IsValid)
             {
@@ -100,13 +96,13 @@ namespace V1_BTL_CNPM.Controllers.admin
         }
 
         // GET: Diems/Delete/5
-        public ActionResult Delete(double? id)
+        public ActionResult Delete(string id, string id2)
         {
-            if (id == null)
+            if (id == null && id2 == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Diem diem = db.Diems.Find(id);
+            Diem diem = db.Diems.Find(id, id2);
             if (diem == null)
             {
                 return HttpNotFound();
@@ -116,10 +112,10 @@ namespace V1_BTL_CNPM.Controllers.admin
 
         // POST: Diems/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(double id)
+        //[ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(string id, string id2)
         {
-            Diem diem = db.Diems.Find(id);
+            Diem diem = db.Diems.Find(id, id2);
             db.Diems.Remove(diem);
             db.SaveChanges();
             return RedirectToAction("Index");

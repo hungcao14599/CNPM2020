@@ -2,44 +2,34 @@
 
 @{
     ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@using (Html.BeginForm())
+<h2>Edit</h2>
+
+@using (Html.BeginForm(FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Cập nhật thông tin điểm sinh viên theo môn học</h4>
+        <h4>Diem</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.MaSV, "Mã sinh viên", htmlAttributes: new { @class = "control-label col-md-6" })
-            <div class="col-md-10">
-                @Html.DropDownList("MaSV", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.MaSV, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        @Html.HiddenFor(model => model.MaSV)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Diem1, "Điểm sinh viên", htmlAttributes: new { @class = "control-label col-md-6" })
+            @Html.LabelFor(model => model.Diem1, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Diem1, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
+                @Html.EditorFor(model => model.Diem1, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Diem1, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.MaMon, "Tên môn", htmlAttributes: new { @class = "control-label col-md-6" })
-            <div class="col-md-10">
-                @Html.DropDownList("MaMon", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.MaMon, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
+        @Html.HiddenFor(model => model.MaMon)
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Cập nhật" class="btn btn-success" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>

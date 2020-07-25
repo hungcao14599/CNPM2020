@@ -12,12 +12,12 @@ namespace V1_BTL_CNPM.Controllers.admin
 {
     public class sinhviensController : BaseController
     {
-        private db_cnpm_v3Entities db = new db_cnpm_v3Entities();
+        private db_cnpm_v3_1Entities db = new db_cnpm_v3_1Entities();
 
         // GET: sinhviens
         public ActionResult Index()
         {
-            var sinhviens = db.sinhviens.Include(s => s.khoa).Include(s => s.taikhoan);
+            var sinhviens = db.sinhviens.Include(s => s.nganh).Include(s => s.taikhoan);
             return View(sinhviens.ToList());
         }
 
@@ -58,7 +58,7 @@ namespace V1_BTL_CNPM.Controllers.admin
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MaKhoa = new SelectList(db.khoas, "MaKhoa", "TenKhoa", sinhvien.MaKhoa);
+            ViewBag.MaKhoa = new SelectList(db.khoas, "MaKhoa", "TenKhoa", sinhvien.MaNganh);
             ViewBag.MaTK = new SelectList(db.taikhoans, "MaTK", "TenTaiKhoan", sinhvien.MaTK);
             return View(sinhvien);
         }
@@ -75,7 +75,7 @@ namespace V1_BTL_CNPM.Controllers.admin
             {
                 return HttpNotFound();
             }
-            ViewBag.MaKhoa = new SelectList(db.khoas, "MaKhoa", "TenKhoa", sinhvien.MaKhoa);
+            ViewBag.MaKhoa = new SelectList(db.khoas, "MaKhoa", "TenKhoa", sinhvien.MaNganh);
             ViewBag.MaTK = new SelectList(db.taikhoans, "MaTK", "TenTaiKhoan", sinhvien.MaTK);
             return View(sinhvien);
         }
@@ -93,7 +93,7 @@ namespace V1_BTL_CNPM.Controllers.admin
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MaKhoa = new SelectList(db.khoas, "MaKhoa", "TenKhoa", sinhvien.MaKhoa);
+            ViewBag.MaKhoa = new SelectList(db.khoas, "MaKhoa", "TenKhoa", sinhvien.MaNganh);
             ViewBag.MaTK = new SelectList(db.taikhoans, "MaTK", "TenTaiKhoan", sinhvien.MaTK);
             return View(sinhvien);
         }

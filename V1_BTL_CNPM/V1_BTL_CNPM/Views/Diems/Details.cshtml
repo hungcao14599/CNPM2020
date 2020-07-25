@@ -2,30 +2,42 @@
 
 @{
     ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h2>Details</h2>
+
 <div>
-    <h4>Thông tin chi tiết điểm sinh viên theo môn học</h4>
+    <h4>Diem</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Diem1)
+        </dt>
 
         <dd>
-            <b>Tên sinh viên</b>: @Html.DisplayFor(model => model.sinhvien.TenSV)
+            @Html.DisplayFor(model => model.Diem1)
         </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mon.TenMon)
+        </dt>
+
         <dd>
-            <b>Môn học</b>: @Html.DisplayFor(model => model.mon.TenMon)
+            @Html.DisplayFor(model => model.mon.TenMon)
         </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sinhvien.TenSV)
+        </dt>
+
         <dd>
-            <b>Điểm</b>: @Html.DisplayFor(model => model.Diem1)
+            @Html.DisplayFor(model => model.sinhvien.TenSV)
         </dd>
-
-
-
-
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Cập nhật", "Edit", new { id = Model.Diem1 }) |
+    @Html.ActionLink("Cập nhật", "Edit", new { id = Model.MaSV, id2 = Model.MaMon }) |
     @Html.ActionLink("Trở lại danh sách", "Index")
 </p>

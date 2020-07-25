@@ -84,10 +84,10 @@
 
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.MaKhoa, "Tên khoa", htmlAttributes: new { @class = "control-label col-md-6" })
+                    @Html.LabelFor(model => model.MaNganh, "Tên ngành", htmlAttributes: new { @class = "control-label col-md-6" })
                     <div class="col-md-10">
-                        @Html.DropDownList("MaKhoa", null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.MaKhoa, "", new { @class = "text-danger" })
+                        @Html.DropDownList("MaNganh", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.MaNganh, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
